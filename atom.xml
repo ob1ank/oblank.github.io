@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-08-25T08:33:20.772Z</updated>
+  <updated>2017-08-25T08:34:08.574Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,9 +20,10 @@
     <link href="http://yoursite.com/2017/08/25/Hello-World-0/"/>
     <id>http://yoursite.com/2017/08/25/Hello-World-0/</id>
     <published>2017-08-25T07:19:58.000Z</published>
-    <updated>2017-08-25T08:33:20.772Z</updated>
+    <updated>2017-08-25T08:34:08.574Z</updated>
     
-    <content type="html"><![CDATA[<p><strong> Hello World! ：</strong> <excerpt in="" index="" |="" 首页摘要\=""></excerpt></p>
+    <content type="html"><![CDATA[<!-- ** Hello World! ：**  –&gt;
+<p><Excerpt in index | 首页摘要\></p>
 <h2 id="aa"><a href="#aa" class="headerlink" title="aa"></a>aa</h2><p>nice </p>
 <a id="more"></a>
 <the rest="" of="" contents="" |="" 余下全文\="">
@@ -32,7 +33,8 @@
     
     <summary type="html">
     
-      &lt;p&gt;&lt;strong&gt; Hello World! ：&lt;/strong&gt; &lt;excerpt in=&quot;&quot; index=&quot;&quot; |=&quot;&quot; 首页摘要\=&quot;&quot;&gt;&lt;/excerpt&gt;&lt;/p&gt;
+      &lt;!-- ** Hello World! ：**  –&amp;gt;
+&lt;p&gt;&lt;Excerpt in index | 首页摘要\&gt;&lt;/p&gt;
 &lt;h2 id=&quot;aa&quot;&gt;&lt;a href=&quot;#aa&quot; class=&quot;headerlink&quot; title=&quot;aa&quot;&gt;&lt;/a&gt;aa&lt;/h2&gt;&lt;p&gt;nice &lt;/p&gt;
     
     </summary>
