@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-08-25T08:30:17.916Z</updated>
+  <updated>2017-08-25T08:33:20.772Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,9 +20,9 @@
     <link href="http://yoursite.com/2017/08/25/Hello-World-0/"/>
     <id>http://yoursite.com/2017/08/25/Hello-World-0/</id>
     <published>2017-08-25T07:19:58.000Z</published>
-    <updated>2017-08-25T08:30:17.916Z</updated>
+    <updated>2017-08-25T08:33:20.772Z</updated>
     
-    <content type="html"><![CDATA[<p><strong> hexo和coding打造静态博客 ：</strong> <excerpt in="" index="" |="" 首页摘要\=""></excerpt></p>
+    <content type="html"><![CDATA[<p><strong> Hello World! ：</strong> <excerpt in="" index="" |="" 首页摘要\=""></excerpt></p>
 <h2 id="aa"><a href="#aa" class="headerlink" title="aa"></a>aa</h2><p>nice </p>
 <a id="more"></a>
 <the rest="" of="" contents="" |="" 余下全文\="">
@@ -32,7 +32,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;&lt;strong&gt; hexo和coding打造静态博客 ：&lt;/strong&gt; &lt;excerpt in=&quot;&quot; index=&quot;&quot; |=&quot;&quot; 首页摘要\=&quot;&quot;&gt;&lt;/excerpt&gt;&lt;/p&gt;
+      &lt;p&gt;&lt;strong&gt; Hello World! ：&lt;/strong&gt; &lt;excerpt in=&quot;&quot; index=&quot;&quot; |=&quot;&quot; 首页摘要\=&quot;&quot;&gt;&lt;/excerpt&gt;&lt;/p&gt;
 &lt;h2 id=&quot;aa&quot;&gt;&lt;a href=&quot;#aa&quot; class=&quot;headerlink&quot; title=&quot;aa&quot;&gt;&lt;/a&gt;aa&lt;/h2&gt;&lt;p&gt;nice &lt;/p&gt;
     
     </summary>
@@ -68,66 +68,169 @@
   </entry>
   
   <entry>
-    <title>hexo自用黑色主题</title>
-    <link href="http://yoursite.com/2017/05/23/hexo-theme/"/>
-    <id>http://yoursite.com/2017/05/23/hexo-theme/</id>
-    <published>2017-05-23T03:32:59.000Z</published>
-    <updated>2017-08-25T08:03:16.707Z</updated>
+    <title>一个完整项目的得失</title>
+    <link href="http://yoursite.com/2017/04/11/fullprj-desc/"/>
+    <id>http://yoursite.com/2017/04/11/fullprj-desc/</id>
+    <published>2017-04-11T02:18:22.000Z</published>
+    <updated>2017-08-25T08:03:16.704Z</updated>
     
-    <content type="html"><![CDATA[<p><strong> hexo和coding打造静态博客 ：</strong> <excerpt in="" index="" |="" 首页摘要\=""><br>使用hexo一年有余，对所有主题都感觉有所缺陷，便修改了一个自用黑色主题，本主题以黑色和蓝色为主，色彩鲜明，主题明确。<br><a id="more"></a></excerpt></p>
+    <content type="html"><![CDATA[<p><strong> 一个完整项目的得失：</strong> <excerpt in="" index="" |="" 首页摘要=""><br>想做一个完美的cms太难，架构本身就是要有取舍，只有最合适的架构，没有最好的架构。<br><a id="more"></a></excerpt></p>
+<the rest="" of="" contents="" |="" 余下全文="">
+
+<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>今年从2月份到4月份做了一个完整到项目，后台cms系统，包括前台应用。写打造一个完美到系统，确实需要考虑太多因素，<br>自己收获颇多，特此总结一下。</p>
+<h2 id="架构"><a href="#架构" class="headerlink" title="架构"></a>架构</h2><p>cms后台主要使用java的spring，mybits，shiro框架，前台就是jquery，jsp，bootstrap，<br>数据库方面是mysql，缓存没有使用</p>
+<h2 id="数据库设计"><a href="#数据库设计" class="headerlink" title="数据库设计"></a>数据库设计</h2><p>使用mysql设计数据库，对业务的不深入很多时候会导致设置的表满足不了需求</p>
+<ol>
+<li>提前预留几个def空字段，这样不需要频繁的修改表结构</li>
+<li>索引要建好，数据量增长起来后，没有索引搜索肯定慢的很，对常见的搜索条件建索引</li>
+<li>对并发有个大致的数</li>
+</ol>
+<h2 id="nginx配置"><a href="#nginx配置" class="headerlink" title="nginx配置"></a>nginx配置</h2><ol>
+<li>反向代理配置，代理80端口，代理域名访问</li>
+<li>静态资源缓存，压缩</li>
+<li>websocket配置，https配置</li>
+<li>集群的负载均衡配置</li>
+</ol>
+<h2 id="tomcat配置"><a href="#tomcat配置" class="headerlink" title="tomcat配置"></a>tomcat配置</h2><ol>
+<li>jvm参数设置</li>
+<li>项目路径设置</li>
+<li>日志，重启配置</li>
+</ol>
+<h2 id="安全问题"><a href="#安全问题" class="headerlink" title="安全问题"></a>安全问题</h2><ol>
+<li>防止</li>
+</ol>
+<h2 id="选购服务器和域名"><a href="#选购服务器和域名" class="headerlink" title="选购服务器和域名"></a>选购服务器和域名</h2><ol>
+<li>估算并发量，预留一定的并发量</li>
+<li>根据并发量计算带宽和cpu还有内存</li>
+<li>根据网络情况选择不同区域的服务器</li>
+<li>根据需求选择域名</li>
+</ol>
+<h2 id="突发状况的处理机制"><a href="#突发状况的处理机制" class="headerlink" title="突发状况的处理机制"></a>突发状况的处理机制</h2><ol>
+<li>选购的第三方接口挂了</li>
+<li>数据库挂了</li>
+<li>服务器挂了</li>
+<li>网络异常</li>
+</ol>
+<blockquote>
+<p>如果文章对你有帮助,请去我的博客留个言吧! <a href="http://geeksblog.cc" target="_blank" rel="external">我的博客</a></p>
+</blockquote>
+</the>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt; 一个完整项目的得失：&lt;/strong&gt; &lt;excerpt in=&quot;&quot; index=&quot;&quot; |=&quot;&quot; 首页摘要=&quot;&quot;&gt;&lt;br&gt;想做一个完美的cms太难，架构本身就是要有取舍，只有最合适的架构，没有最好的架构。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="编程语言" scheme="http://yoursite.com/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/"/>
+    
+    
+      <category term="java" scheme="http://yoursite.com/tags/java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>git学习笔记</title>
+    <link href="http://yoursite.com/2016/05/01/git-config-study/"/>
+    <id>http://yoursite.com/2016/05/01/git-config-study/</id>
+    <published>2016-05-01T00:24:45.000Z</published>
+    <updated>2017-08-25T08:03:16.705Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong> git学习笔记：</strong> <excerpt in="" index="" |="" 首页摘要=""><br>    git的常用操作，高级技巧都要哦<br><a id="more"></a></excerpt></p>
 <the rest="" of="" contents="" |="" 余下全文\="">
 
-<h2 id="主题图片"><a href="#主题图片" class="headerlink" title="主题图片"></a>主题图片</h2><p><img src="http://o7kalf5h3.bkt.clouddn.com/blog-index.png" alt="主题首页"> </p>
-<h2 id="black-blue主题来源"><a href="#black-blue主题来源" class="headerlink" title="black-blue主题来源"></a>black-blue主题来源</h2><p>本主题修改自<strong>spfk</strong>主题，但之前spfk主题有很多问题，本主题改进如下：</p>
-<ol>
-<li>压缩js，css提高性能</li>
-<li>代码段样式显示更完美</li>
-<li>增加本地搜索</li>
-<li>设置更合适的字体大小</li>
-<li>颜色以黑色和蓝色为主，色彩鲜明</li>
-<li>seo适当优化</li>
-<li>删除多说，有言，增加畅言评论</li>
-<li>删除stylus，全部改用css方便修改</li>
+<h2 id="安装git"><a href="#安装git" class="headerlink" title="安装git"></a>安装git</h2><ol>
+<li>下载安装包 ￼下载地址￼</li>
+<li>安装git</li>
+<li>进入命令行,输入git看看是否成功</li>
 </ol>
-<h2 id="主题地址"><a href="#主题地址" class="headerlink" title="主题地址"></a>主题地址</h2><p><a href="https://github.com/maochunguang/black-blue" target="_blank" rel="external">black-blue</a></p>
-<h2 id="注意："><a href="#注意：" class="headerlink" title="注意："></a>注意：</h2><p>大家使用主题的时候，把<strong>主题配置文件_config.yml</strong>以下几项必须修改，项目里实用的是我博客的正式代码，请大家修改成自己的！<br><figure class="highlight yml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="attr">google_analytics:</span> <span class="string">xxx</span></div><div class="line"><span class="attr">baidu_analytics:</span> <span class="string">xxxxxxx</span></div><div class="line"><span class="attr">disqus:</span></div><div class="line"><span class="attr">  on:</span> <span class="literal">false</span></div><div class="line"><span class="attr">  shortname:</span> <span class="string">xxxx</span></div><div class="line"><span class="comment"># 畅言评论</span></div><div class="line"><span class="attr">changyan:</span></div><div class="line"><span class="attr">  on:</span> <span class="literal">true</span></div><div class="line"><span class="attr">  appid:</span> <span class="string">xxxx</span></div><div class="line"><span class="attr">  conf:</span> <span class="string">xxxxx</span></div></pre></td></tr></table></figure></p>
-<h2 id="black-blue主题配置"><a href="#black-blue主题配置" class="headerlink" title="black-blue主题配置"></a>black-blue主题配置</h2><h3 id="切换主题"><a href="#切换主题" class="headerlink" title="切换主题"></a>切换主题</h3><p>复制主题到themes目录下<code>cd themes &amp;&amp; git clone https://github.com/maochunguang/black-blue</code>，修改_config.yml <code>theme: black-blue</code></p>
-<h3 id="安装常用插件，建议全部安装"><a href="#安装常用插件，建议全部安装" class="headerlink" title="安装常用插件，建议全部安装"></a>安装常用插件，建议全部安装</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">## rss插件</span></div><div class="line">npm install hexo-generator-feed --save</div><div class="line"><span class="comment">## 站点sitemap生成插件</span></div><div class="line">npm install hexo-generator-sitemap --save</div><div class="line">npm install hexo-generator-baidu-sitemap --save</div><div class="line"><span class="comment">## 百度url提交</span></div><div class="line">npm install hexo-baidu-url-submit --save</div><div class="line"><span class="comment">## 本地搜索插件集成</span></div><div class="line">npm install hexo-generator-search --save</div></pre></td></tr></table></figure>
-<h3 id="博客全局配置，修改根目录下-config-yml"><a href="#博客全局配置，修改根目录下-config-yml" class="headerlink" title="博客全局配置，修改根目录下_config.yml"></a>博客全局配置，修改根目录下_config.yml</h3><p>插件配置<br><figure class="highlight yml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="attr">Plugins:</span></div><div class="line"><span class="bullet">-</span> <span class="string">hexo-generator-feed</span></div><div class="line"><span class="bullet">-</span> <span class="string">hexo-generator-sitemap</span></div><div class="line"><span class="bullet">-</span> <span class="string">hexo-generator-baidu-sitemap</span></div></pre></td></tr></table></figure></p>
-<p>rss设置<br><figure class="highlight yml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="attr">feed:</span></div><div class="line"><span class="attr">  type:</span> <span class="string">atom</span></div><div class="line"><span class="attr">  path:</span> <span class="string">atom.xml</span></div><div class="line"><span class="attr">  limit:</span> <span class="number">20</span></div></pre></td></tr></table></figure></p>
-<p>本地搜索配置<br><figure class="highlight yml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="attr">search:</span></div><div class="line"><span class="attr">  path:</span> <span class="string">search.json</span></div><div class="line"><span class="attr">  field:</span> <span class="string">post</span></div></pre></td></tr></table></figure></p>
-<p>站点地图，seo搜索引擎需要<br><figure class="highlight yml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="attr">sitemap:</span></div><div class="line"><span class="attr">  path:</span> <span class="string">sitemap.xml</span></div><div class="line"><span class="attr">baidusitemap:</span></div><div class="line"><span class="attr">  path:</span> <span class="string">baidusitemap.xml</span></div></pre></td></tr></table></figure></p>
-<h3 id="主题配置"><a href="#主题配置" class="headerlink" title="主题配置"></a>主题配置</h3><p>菜单配置<br><figure class="highlight yml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">## 添加单独的页面:hexo new page about，about是页面的路径，也是名称</span></div><div class="line"><span class="comment">## Tags Cloud Page: `hexo new page tags`</span></div><div class="line"><span class="attr">menu:</span></div><div class="line">  <span class="comment"># 主页: /archives/</span></div><div class="line">  <span class="string">所有文章:</span> <span class="string">/archives/</span></div><div class="line">  <span class="string">玩转开发工具:</span> <span class="string">/categories/开发工具/</span></div><div class="line">  <span class="string">玩转数码:</span> <span class="string">/categories/digital</span></div><div class="line">  <span class="string">认知提升:</span> <span class="string">/categories/cognition</span></div><div class="line">  <span class="string">关于我:</span> <span class="string">/about/</span></div></pre></td></tr></table></figure></p>
-<p>评论配置<br><figure class="highlight yml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 是否开启畅言评论，</span></div><div class="line"><span class="attr">changyan:</span></div><div class="line"><span class="attr">  on:</span> <span class="literal">true</span></div><div class="line"><span class="attr">  appid:</span> <span class="string">xxxx</span></div><div class="line"><span class="attr">  conf:</span> <span class="string">xxxxxxxxxxxx</span></div><div class="line"><span class="comment"># 是否开启disqus，</span></div><div class="line"><span class="attr">disqus:</span></div><div class="line"><span class="attr">  on:</span> <span class="literal">false</span></div><div class="line"><span class="attr">  shortname:</span> <span class="string">mmmmmm</span></div></pre></td></tr></table></figure></p>
-<h3 id="其他配置，详细的配置请下载主题，都有注释"><a href="#其他配置，详细的配置请下载主题，都有注释" class="headerlink" title="其他配置，详细的配置请下载主题，都有注释"></a>其他配置，<strong>详细的配置请下载主题，都有注释</strong></h3><figure class="highlight yml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 数学公式支持</span></div><div class="line"><span class="attr">mathjax:</span> <span class="literal">false</span></div><div class="line"><span class="comment"># Socail Share | 是否开启分享</span></div><div class="line"><span class="attr">baidushare:</span> <span class="literal">true</span></div><div class="line"><span class="comment"># 谷歌分析，百度分析，seo分析很有用</span></div><div class="line"><span class="attr">google_analytics:</span> <span class="string">xxxxxx</span></div><div class="line"><span class="attr">baidu_analytics:</span> <span class="string">xxcxcxcsdsf</span></div></pre></td></tr></table></figure>
-<h2 id="自定义配置（对前端技术有了解即可）"><a href="#自定义配置（对前端技术有了解即可）" class="headerlink" title="自定义配置（对前端技术有了解即可）"></a>自定义配置（对前端技术有了解即可）</h2><h3 id="头像配置"><a href="#头像配置" class="headerlink" title="头像配置"></a>头像配置</h3><p>在themes/black-blue/source/img/avatar.png,替换此头像即可实现自定义头像</p>
-<h3 id="背景图片配置"><a href="#背景图片配置" class="headerlink" title="背景图片配置"></a>背景图片配置</h3><p>在themes/black-blue/source/background/,替换为自己喜欢的图片，图片名称不能改</p>
-<h3 id="添加评论插件"><a href="#添加评论插件" class="headerlink" title="添加评论插件"></a>添加评论插件</h3><p>比如把畅言替换为有言</p>
-<ol>
-<li><p>先修改themes/black-blue/_config.yml文件</p>
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="attr">changyan:</span></div><div class="line"><span class="attr">  on:</span> <span class="literal">true</span></div><div class="line"><span class="attr">  uid:</span> <span class="string">xxxxxxx</span></div></pre></td></tr></table></figure>
+<h2 id="配置git"><a href="#配置git" class="headerlink" title="配置git"></a>配置git</h2><ol>
+<li>配置全局用户名和密码<br> `git config –global user.name “John Doe”<br> git config –global user.email johndoe@example.com<br> `</li>
+<li>配置ssh公钥<br> <code>cd ~/.ssh</code> 然后<code>ls</code><br> 如果没有,直接生成,一路点击enter<br> ```<br> ssh-keygen<br> cat ~/.ssh/id_rsa.pub<br> ```<br> 把公钥配置到github的个人设置</li>
+</ol>
+<h2 id="常用的命令"><a href="#常用的命令" class="headerlink" title="常用的命令"></a>常用的命令</h2><ol>
+<li><p>repository操作</p>
+<ul>
+<li>检出（clone）仓库代码：<code>git clone repository-url</code> / <code>git clone repository-url local-directoryname</code><ul>
+<li>例如，clone jquery 仓库到本地： <code>git clone git://github.com/jquery/jquery.git</code></li>
+<li>clone jquery 仓库到本地，并且重命名为 my-jquery ：<code>git clone git://github.com/jquery/jquery.git my-jquery</code></li>
+</ul>
 </li>
-<li><p>修改themes/black-blue/layout/_partial/comments/changyan.ejs</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;section <span class="class"><span class="keyword">class</span></span>=<span class="string">"changyan"</span> id=<span class="string">"comments"</span>&gt;</div><div class="line">&lt;div id=<span class="string">"uyan_frame"</span>&gt;&lt;/div&gt;</div><div class="line">&lt;script type=<span class="string">"text/javascript"</span> src=<span class="string">"http://v2.uyan.cc/code/uyan.js?uid=&lt;%= uid%&gt;"</span>&gt;</div><div class="line">&lt;<span class="regexp">/script&gt;</span></div><div class="line"><span class="regexp">&lt;/</span>section&gt;</div></pre></td></tr></table></figure>
+<li>查看远程仓库：<code>git remote -v</code></li>
+<li>添加远程仓库：<code>git remote add [name] [repository-url]</code></li>
+<li>删除远程仓库：<code>git remote rm [name]</code></li>
+<li>修改远程仓库地址：<code>git remote set-url origin new-repository-url</code></li>
+<li>拉取远程仓库： <code>git pull [remoteName] [localBranchName]</code></li>
+<li>推送远程仓库： <code>git push [remoteName] [localBranchName]</code></li>
+</ul>
 </li>
-<li><p>修改themes/black-blue/layout/_partial/article.ejs</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;%- partial(<span class="string">'comments/changyan'</span>, &#123;</div><div class="line">  uid: theme.changyan.uid</div><div class="line">&#125;) %&gt;</div></pre></td></tr></table></figure>
+<li><p>提交/拉取/合并/删除</p>
+<ul>
+<li>添加文件到暂存区（staged）：<code>git add filename</code> / <code>git stage filename</code></li>
+<li>将所有修改文件添加到暂存区（staged）： <code>git add --all</code> / <code>git add -A</code></li>
+<li>提交修改到暂存区（staged）：<code>git commit -m &#39;commit message&#39;</code> / <code>git commit -a -m &#39;commit message&#39;</code> 注意理解 -a 参数的意义</li>
+<li>从Git仓库中删除文件：<code>git rm filename</code></li>
+<li>从Git仓库中删除文件，但本地文件保留：<code>git rm --cached filename</code></li>
+<li><p>重命名某个文件：<code>git mv filename newfilename</code> 或者直接修改完毕文件名 ，进行<code>git add -A &amp;&amp; git commit -m &#39;commit message&#39;</code> Git会自动识别是重命名了文件</p>
 </li>
-<li><p>重新生成页面<code>hexo g</code></p>
+<li><p>获取远程最新代码到本地：<code>git pull (origin branchname)</code> 可以指定分支名，也可以忽略。pull 命令自动 fetch 远程代码并且 merge，如果有冲突，会显示在状态栏，需要手动处理。更推荐使用：<code>git fetch</code> 之后 <code>git merge --no-ff origin branchname</code> 拉取最新的代码到本地仓库，并手动 merge 。</p>
+</li>
+</ul>
+</li>
+<li><p>日志查看</p>
+<ul>
+<li>查看日志：<code>git log</code></li>
+<li>查看日志，并查看每次的修改内容：<code>git log -p</code></li>
+<li>查看日志，并查看每次文件的简单修改状态：<code>git log --stat</code></li>
+<li>一行显示日志：<code>git log --pretty=oneline</code> / <code>git log --pretty=&#39;format:&quot;%h - %an, %ar : %s&#39;</code></li>
+<li>查看日志范围：<ul>
+<li>查看最近10条日志：<code>git log -10</code></li>
+<li>查看2周前：<code>git log --until=2week</code> 或者指定2周的明确日期，比如：<code>git log --until=2015-08-12</code></li>
+<li>查看最近2周内：<code>git log --since=2week</code> 或者指定2周明确日志，比如：<code>git log --since=2015-08-12</code></li>
+<li>只查看某个用户的提交：<code>git log --committer=user.name</code> / <code>git log --author=user.name</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>取消操作</p>
+<ul>
+<li>上次提交msg错误/有未提交的文件应该同上一次一起提交，需要重新提交备注：<code>git commit --amend -m &#39;new msg&#39;</code></li>
+<li>一次<code>git add -A</code>后，需要将某个文件撤回到工作区，即：某个文件不应该在本次commit中：<code>git reset HEAD filename</code></li>
+<li>撤销某些文件的修改内容：<code>git checkout -- filename</code> 注意：一旦执行，所有的改动都没有了，谨慎！谨慎！谨慎！</li>
+<li>将工作区内容回退到远端的某个版本：<code>git reset --hard &lt;sha1-of-commit&gt;</code><ul>
+<li><code>--hard</code>：reset stage and working directory ,<commitid> 以来所有的变更全部丢弃，并将 HEAD 指向<commitid></commitid></commitid></li>
+<li><code>--soft</code>：nothing changed to stage and working directory ,仅仅将HEAD指向<commitid> ，所有变更显示在”changed to be committed”中</commitid></li>
+<li><code>--mixed</code>：default,reset stage ,nothing to working directory ，这也就是第二个例子的原因</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>比较差异</p>
+<ul>
+<li>查看工作区（working directory）和暂存区（staged）之间差异：<code>git diff</code></li>
+<li>查看工作区（working directory）与当前仓库版本（repository）HEAD版本差异：<code>git diff HEAD</code></li>
+<li>查看暂存区（staged）与当前仓库版本（repository）差异：<code>git diff --cached</code> / <code>git diff --staged</code></li>
+</ul>
+</li>
+<li><p>合并操作</p>
+<ul>
+<li>解决冲突后/获取远程最新代码后合并代码：<code>git merge branchname</code></li>
+<li>保留该存在版本合并log：<code>git merge --no-ff branchname</code> 参数<code>--no-ff</code>防止 fast-forward 的提交</li>
+</ul>
 </li>
 </ol>
 </the>]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;&lt;strong&gt; hexo和coding打造静态博客 ：&lt;/strong&gt; &lt;excerpt in=&quot;&quot; index=&quot;&quot; |=&quot;&quot; 首页摘要\=&quot;&quot;&gt;&lt;br&gt;使用hexo一年有余，对所有主题都感觉有所缺陷，便修改了一个自用黑色主题，本主题以黑色和蓝色为主，色彩鲜明，主题明确。&lt;br&gt;
+      &lt;p&gt;&lt;strong&gt; git学习笔记：&lt;/strong&gt; &lt;excerpt in=&quot;&quot; index=&quot;&quot; |=&quot;&quot; 首页摘要=&quot;&quot;&gt;&lt;br&gt;    git的常用操作，高级技巧都要哦&lt;br&gt;
     
     </summary>
     
-      <category term="开发工具" scheme="http://yoursite.com/categories/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/"/>
+      <category term="学习笔记" scheme="http://yoursite.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="hexo" scheme="http://yoursite.com/tags/hexo/"/>
+      <category term="others" scheme="http://yoursite.com/tags/others/"/>
     
   </entry>
   
