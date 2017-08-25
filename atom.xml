@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>an15m</title>
   
-  <link href="/themes/black-blue/source/atom.xml" rel="self"/>
+  <link href="/atom.xml" rel="self"/>
   
   <link href="http://an15m.github.io/"/>
   <updated>2017-08-25T09:17:57.407Z</updated>
