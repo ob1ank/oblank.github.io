@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="baidu-site-verification" content="L6Lm9d5Crl"/>
+  
+  
+  
+  
+  <title>nodejs开发规范 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="nodejs开发规范：     nodejs开发中应当遵循的规范，以及最佳实践">
+<meta name="keywords" content="node">
+<meta property="og:type" content="article">
+<meta property="og:title" content="nodejs开发规范">
+<meta property="og:url" content="http://yoursite.com/2016/05/23/node-develop/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="nodejs开发规范：     nodejs开发中应当遵循的规范，以及最佳实践">
+<meta property="og:updated_time" content="2017-08-25T08:03:16.711Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="nodejs开发规范">
+<meta name="twitter:description" content="nodejs开发规范：     nodejs开发中应当遵循的规范，以及最佳实践">
+  
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script>
+      var yiliaConfig = {
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="/img/avatar.png" class="js-avatar">
+            
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">John Doe</a></h1>
+        </hgroup>
+        
+        
+            <form>
+                <input type="text" class="st-default-search-input search" id="local-search-input" placeholder=" Search...">
+            </form>
+            <div id="local-search-result"></div>
+        
+        
+            <script type="text/javascript">
+                (function() {
+                    'use strict';
+                    function getMatchData(keyword, data) {
+                        var matchData = [];
+                        for(var i =0;i<data.length;i++){
+                            if(data[i].title.toLowerCase().indexOf(keyword)>=0) 
+                                matchData.push(data[i])
+                        }
+                        return matchData;
+                    }
+                    var $input = $('#local-search-input');
+                    var $resultContent = $('#local-search-result');
+                    $input.keyup(function(){
+                        $.ajax({
+                            url: '/search.json',
+                            dataType: "json",
+                            success: function( json ) {
+                                var str='<ul class=\"search-result-list\">';                
+                                var keyword = $input.val().trim().toLowerCase();
+                                $resultContent.innerHTML = "";
+                                if ($input.val().trim().length <= 0) {
+                                    $resultContent.empty();
+                                    $('#switch-area').show();
+                                    return;
+                                }
+                                var results = getMatchData(keyword, json);
+                                if(results.length === 0){
+                                    $resultContent.empty();
+                                    $('#switch-area').show();
+                                    return;
+                                } 
+                                for(var i =0; i<results.length; i++){
+                                    str += "<li><a href='"+ results[i].url +"' class='search-result-title'>"+ results[i].title +"</a></li>";
+                                }
+                                str += "</ul>";
+                                $resultContent.empty();
+                                $resultContent.append(str);
+                                $('#switch-area').hide();
+                            }
+                        });
+                    });
+                })();
+            </script>
+        
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a  href="/archives/">所有文章</a></li>
+                        
+                            <li><a  href="/categories/java">java</a></li>
+                        
+                            <li><a  href="/about/">关于我</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fl github"  target="_blank" href="/xxxxx" title="github">github</a>
+                            
+                                <a class="fl weibo"  target="_blank" href="/xxxxxxxx" title="weibo">weibo</a>
+                            
+                                <a class="fl rss"  target="_blank" href="/atom.xml" title="rss">rss</a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/tags/book/" style="font-size: 10px;">book</a> <a href="/tags/hexo/" style="font-size: 14px;">hexo</a> <a href="/tags/http/" style="font-size: 12px;">http</a> <a href="/tags/java/" style="font-size: 16px;">java</a> <a href="/tags/linux/" style="font-size: 12px;">linux</a> <a href="/tags/mac/" style="font-size: 12px;">mac</a> <a href="/tags/mongodb/" style="font-size: 10px;">mongodb</a> <a href="/tags/mysql/" style="font-size: 16px;">mysql</a> <a href="/tags/node/" style="font-size: 18px;">node</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/others/" style="font-size: 20px;">others</a> <a href="/tags/redis/" style="font-size: 12px;">redis</a> <a href="/tags/学习笔记/" style="font-size: 10px;">学习笔记</a> <a href="/tags/开发工具/" style="font-size: 10px;">开发工具</a> <a href="/tags/数码产品/" style="font-size: 12px;">数码产品</a> <a href="/tags/算法/" style="font-size: 12px;">算法</a> <a href="/tags/编程语言/" style="font-size: 10px;">编程语言</a>
+                    </div>
+                </section>
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank"  class="main-nav-link switch-friends-link" href="https://github.com/an15m">github</a>
+                    
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">nothing!</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">John Doe</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/avatar.png" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">John Doe</a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/categories/java">java</a></li>
+                
+                    <li><a href="/about/">关于我</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a class="github" target="_blank" href="/xxxxx" title="github">github</a>
+                    
+                        <a class="weibo" target="_blank" href="/xxxxxxxx" title="weibo">weibo</a>
+                    
+                        <a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+                    
+                </div>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-node-develop" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a  href="/2016/05/23/node-develop/" class="article-date">
+      <time datetime="2016-05-23T06:18:02.000Z" itemprop="datePublished">2016-05-23</time>
+</a>
+
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      nodejs开发规范
+    </h1>
+  
+
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/编程语言/">编程语言</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node/">node</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p><strong> nodejs开发规范：</strong> <excerpt in="" index="" |="" 首页摘要=""><br>    nodejs开发中应当遵循的规范，以及最佳实践<br><a id="more"></a></excerpt></p>
+<the rest="" of="" contents="" |="" 余下全文="">
+
+<h2 id="node开发需要编程规范吗？"><a href="#node开发需要编程规范吗？" class="headerlink" title="node开发需要编程规范吗？"></a>node开发需要编程规范吗？</h2><ol>
+<li>js的灵活性非常大，如果开发人员每个人都按自己的习惯随意编写，js的代码会非常混乱不堪。js程序员需要更强的自律性和规范，才能写出易读性，易维护的代码。</li>
+<li>随着前端mvc的崛起，前端的js代码会更加庞大难以管理，如果没有统一的规范，后期维护会比登天还难。</li>
+</ol>
+<h2 id="编码规范"><a href="#编码规范" class="headerlink" title="编码规范"></a>编码规范</h2><ol>
+<li><p>缩进<br>采用两个空格缩进，在编辑器中设置tab为两个空格</p>
+</li>
+<li><p>变量声明</p>
+</li>
+</ol>
+<ul>
+<li>用var声明变量<br>var assert = require(‘assert’);<br>var fork = require(‘child_process’).fork;<br>var net = require(‘net’);</li>
+</ul>
+<p>错误实例：<br>var assert = require(‘assert’)<br>, fork = require(‘child_process’).fork<br>, net = require(‘net’)；</p>
+<ul>
+<li>用字面量声明方式<br>var num = 123;<br>var aaa = {};<br>var arr = [];<br>var isAdmin = true;</li>
+<li><p>避免使用：<br>var obj =new Object();<br>var arr = new Array();<br>var test  =new String(“”);<br>var size = new Number();</p>
+</li>
+<li><p>不要在for循环等循环里声明var变量<br>首先var是函数作用域，在循环声明以后只有等函数声明周期结束这些资源才会释放</p>
+</li>
+</ul>
+<ol>
+<li><p>空格<br>在操作符前后需要加上空格,= 、% 、* 、- 、+ 前后都应该加一个空格<br>比如：var foo = ‘bar’ + baz;<br>错误实例：var foo=’bar’+baz;</p>
+</li>
+<li><p>单双引号的使用<br>在node中尽量使用单引号，<br>var html = ‘<a href="http://cnodejs.org" target="_blank" rel="external">CNode</a>‘;<br>在json中使用双引号</p>
+</li>
+<li><p>分号<br>给表达式结尾加分号，尽管js会自动在行尾加上分号，但是会产生一些误解</p>
+</li>
+</ol>
+<h2 id="命名规范"><a href="#命名规范" class="headerlink" title="命名规范"></a>命名规范</h2><p>在编码中，命名是重头戏。好的命名可以使代码赏心悦目，具有良好的维护性。</p>
+<ol>
+<li>变量命名<br>变量名采用小驼峰命名，单词之间没有任何符号如：<br>var adminUser = {};<br>var callNum = 2134323;</li>
+<li><p>方法命名<br>也是采用小驼峰命名，与变量不同的是采用动词或判断行词汇，如：<br>var getUser = function(){};<br>var isAdmin = function(){};<br>var findUser = function(){};</p>
+</li>
+<li><p>类命名<br>类名采用大驼峰，所有单词首字母大写，如：<br>function User{}</p>
+</li>
+<li><p>常量命名<br>作为常量，单词所有字母大写，用下划线分割，如：<br>var PINK_COLOR = “PINK”;</p>
+</li>
+<li><p>文件命名<br>命名文件时，尽量使用下划线分割单词，比如child_process.js和string_decode.js</p>
+</li>
+<li><p>包名<br>在包名中尽量不要包含js和node的字样，应当适当短并且有意义</p>
+</li>
+</ol>
+<h2 id="其它要点"><a href="#其它要点" class="headerlink" title="其它要点"></a>其它要点</h2><ol>
+<li><p>作用域<br>慎用with和eval（），容易引起作用域混乱</p>
+</li>
+<li><p>比较操作<br>尽量使用===代替==,否则会遇到下面的情况，’0’==0;//true;<br>‘’==0;//true;<br>‘0’===’’//false;</p>
+</li>
+<li><p>严格模式<br>在node后台中尽量全使用严格模式<br>‘use strict’;</p>
+</li>
+<li><p>对象和数组遍历<br>数组遍历使用普通for循环，避免使用for in对数组遍历，<br>对象的遍历使用for in</p>
+</li>
+</ol>
+<h2 id="项目中实践"><a href="#项目中实践" class="headerlink" title="项目中实践"></a>项目中实践</h2><ol>
+<li><p>sublime和webstorm都有JSLint,JSHint这样的代码质量工具，在配置文件中制定好模板规范即可</p>
+</li>
+<li><p>在版本控制工具中设置hook，在precommit的脚本中设置，如果代码不符合标准，就无法提交</p>
+</li>
+</ol>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><ol>
+<li>深入浅出nodejs</li>
+<li>js秘密花园</li>
+<li>js高级编程</li>
+</ol>
+</the>
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a  href="/2016/05/23/node-develop/">nodejs开发规范</a></p>
+        <p><span>文章作者:</span><a  href="/" title="访问 John Doe 的个人博客">John Doe</a></p>
+        <p><span>发布时间:</span>2016年05月23日 - 14时18分</p>
+        <p><span>最后更新:</span>2017年08月25日 - 16时03分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2016/05/23/node-develop/" title="nodejs开发规范">http://yoursite.com/2016/05/23/node-develop/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/05/23/node-develop/　　作者: John Doe" title=""></span>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+<nav id="article-nav">
+  
+    <a  href="/2016/05/28/mysql-study/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          mysql学习笔记
+        
+      </div>
+    </a>
+  
+  
+    <a  href="/2016/05/23/redis-study/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">redis学习笔记</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#node开发需要编程规范吗？"><span class="toc-number">1.</span> <span class="toc-text">node开发需要编程规范吗？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#编码规范"><span class="toc-number">2.</span> <span class="toc-text">编码规范</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#命名规范"><span class="toc-number">3.</span> <span class="toc-text">命名规范</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#其它要点"><span class="toc-number">4.</span> <span class="toc-text">其它要点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#项目中实践"><span class="toc-number">5.</span> <span class="toc-text">项目中实践</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考文献"><span class="toc-number">6.</span> <span class="toc-text">参考文献</span></a></li></ol>
+</div>
+<style>
+    .left-col .switch-btn {
+        display: none;
+    }
+    .left-col .switch-area {
+        display: none;
+    }
+</style>
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+            $(".switch-btn, .switch-area").fadeOut(300);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+            $(".switch-btn, .switch-area").fadeIn(500);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+        $(".switch-btn, .switch-area").show();
+    }
+</script>
+
+
+
+
+
+
+    
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a  href="/2016/05/28/mysql-study/" title="上一篇: mysql学习笔记">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a  href="/2016/05/23/redis-study/" title="下一篇: redis学习笔记">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/08/25/Hello-World-0/">Hello World!</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/25/hello-world/">Hello World</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/12/trandsferProject/">用java将GBK工程转为uft8</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/29/num2Chinese/">阿拉伯数字转汉字写法</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/07/24/java-interview/">java面试大全自制版</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/23/kobo-config/">kobo aura one导出笔记高级配置</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/12/mysql-collation/">Illegal mix of collations</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/06/01/buy-computer/">如何选购合适的电脑</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/26/mongodb-study/">mongodb从入门到精通</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/23/hexo-theme/">hexo自用黑色主题</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/18/digital-info/">数码产品选购</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/16/eggjs-action/">egg.js实战技巧</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/15/bestblog/">如何写一篇好博客？</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/15/redis-config/">redis后台启动详细配置</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/14/spider-koa2/">用koa2.x写下载漫画的爬虫</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/04/28/wechat-dev/">微信公众号开发</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/04/21/mac-shortcut/">mac最实用快捷键</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/04/15/mybooks/">那些年读的书</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/04/11/fullprj-desc/">一个完整项目的得失</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/29/free-books/">免费的开源书籍</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/28/hexo-config/">hexo配置和优化记录</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/28/server-config/">ubuntu服务器详细配置</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/27/mac-dev/">mac开发环境配置</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/17/npm-detail/">npm使用详解</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/11/node-notes/">深入浅出nodejs笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/22/best-js-snippet/">atom中最好的js代码补全</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/08/sort-study/">常用排序算法学习</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/06/ajax-jsonp/">ajax和jsonp区别</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/07/06/ajax-study/">ajax简单教程</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/11/mysql-optimize/">mysql优化的常用方法</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/28/mac-mysql-unicode/">mac下mysql5.6字符集设置</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/28/mysql-study/">mysql学习笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/23/node-develop/">nodejs开发规范</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/23/redis-study/">redis学习笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/22/git-svn/">git比svn的优势</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/13/java-date/">java和javascript日期详解</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/06/study-goals/">制定学习目标和计划</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/04/ghost-blog/">使用ghost搭建个人博客</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/01/git-config-study/">git学习笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/26/ubuntu-dev-config/">ubuntu16服务器环境配置</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/24/dream/">我的梦想</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/17/coder-study/">程序员入门指南</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/20/hexo-githup-blog/">hexo和github打造个人博客</a></li><li class="post-list-item"><a class="post-list-link" href="/2015/12/19/node-study/">node学习</a></li></ul>
+    <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        // $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#toc, .switch-btn, .switch-area").toggle();
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+                $(".switch-btn, .switch-area").fadeToggle(300);
+            }
+        })
+    </script>
+
+
+
+
+    <script>
+        
+    </script>
+
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2017 John Doe
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank">Hexo</a><a href="https://github.com/maochunguang" target="_blank">Blog</a> by tommy
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >极客到访数: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+
+    </div>
+    <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 4;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'xxxxx', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+
+	<script>
+	var _hmt = _hmt || [];
+	(function() {
+	  var hm = document.createElement("script");
+	  hm.src = "//hm.baidu.com/hm.js?xxxxxx";
+	  var s = document.getElementsByTagName("script")[0]; 
+	  s.parentNode.insertBefore(hm, s);
+	})();
+	</script>
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+  </div>
+</body>
+</html>
