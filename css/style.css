@@ -415,7 +415,7 @@ a {
 		padding: 3px 10px
 	}
 
-	#container #disqus_thread,#livere,#container .duoshuo {
+	#container #disqus_thread,#container .duoshuo {
 		padding: 0 13px
 	}
 
@@ -1578,7 +1578,7 @@ a {
 	color: #999
 }
 
-#disqus_thread,.duoshuo,#livere {
+#disqus_thread,.duoshuo {
 	padding: 0 40px
 }
 
@@ -3725,4 +3725,10 @@ pre .code,pre .link_label,pre .link_url,pre .operator {
 
 .search-result-list li {
 	padding: 5px
+}
+
+/*an15m*/
+
+#comments {
+	margin: 30px
 }
