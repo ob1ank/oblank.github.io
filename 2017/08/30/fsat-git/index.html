@@ -17,7 +17,7 @@
 <meta property="og:site_name" content="an15m">
 <meta property="og:description" content="让git更快">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-08-30T06:41:13.406Z">
+<meta property="og:updated_time" content="2017-08-30T06:49:27.889Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="fsat git">
 <meta name="twitter:description" content="让git更快">
@@ -300,7 +300,7 @@
         <p><excerpt in="" index="" |="" 首页摘要=""><br>让git更快<br><a id="more"></a></excerpt></p>
 <p><the rest="" of="" contents="" |="" 余下全文=""></the></p>
 <h2 id="git-clone慢的解决方法"><a href="#git-clone慢的解决方法" class="headerlink" title="git clone慢的解决方法"></a>git clone慢的解决方法</h2><ul>
-<li>首先你要有一个代理，推荐<a href="https://github.com/shadowsocksr" target="_blank" rel="external">shadowsocksr</a></li>
+<li>首先你要有一个代理，推荐<a href="https://github.com/shadowsocks" target="_blank" rel="external">shadowsocks</a></li>
 </ul>
 <h3 id="为http和https协议设置socks5代理"><a href="#为http和https协议设置socks5代理" class="headerlink" title="为http和https协议设置socks5代理"></a>为<code>http</code>和<code>https</code>协议设置socks5代理</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git config --global http.proxy <span class="string">'socks5://&lt;your_proxy_host&gt;:&lt;your_proxy_port&gt;'</span></div><div class="line">git config --global https.proxy <span class="string">'socks5://&lt;your_proxy_host&gt;:&lt;your_proxy_port&gt;'</span></div></pre></td></tr></table></figure>
 <h3 id="为git协议设置socks5代理"><a href="#为git协议设置socks5代理" class="headerlink" title="为git协议设置socks5代理"></a>为<code>git</code>协议设置socks5代理</h3><ul>
@@ -312,7 +312,8 @@
 <p>这里的<code>nc</code>是<code>netcat openbsd</code>而不是<code>netcat traditional</code>。<br>给文件添加可执行权限<code>sudo chmod +x git-proxy</code>。</p>
 </li>
 <li>将<code>git-proxy</code>文件所在文件夹加入环境变量<code>$PATH</code>（记得刷新环境变量）。</li>
-<li>配置<code>core.gitProxy</code>：  <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git config --global --add core.gitProxy git-proxy</div></pre></td></tr></table></figure>
+<li><p>配置<code>core.gitProxy</code>：</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git config --global --add core.gitProxy git-proxy</div></pre></td></tr></table></figure>
 </li>
 </ul>
 <h3 id="为ssh协议设置socck5代理："><a href="#为ssh协议设置socck5代理：" class="headerlink" title="为ssh协议设置socck5代理："></a>为<code>ssh</code>协议设置socck5代理：</h3><ul>
@@ -347,7 +348,7 @@
         <p><span>本文标题:</span><a  href="/2017/08/30/fsat-git/">fsat git</a></p>
         <p><span>文章作者:</span><a  href="/" title="访问 an15m 的个人博客">an15m</a></p>
         <p><span>发布时间:</span>2017年08月30日 - 14时36分</p>
-        <p><span>最后更新:</span>2017年08月30日 - 14时41分</p>
+        <p><span>最后更新:</span>2017年08月30日 - 14时49分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2017/08/30/fsat-git/" title="fsat git">http://an15m.tk/2017/08/30/fsat-git/</a>
             <span class="copy-path" data-clipboard-text="原文: http://an15m.tk/2017/08/30/fsat-git/　　作者: an15m" title=""></span>
