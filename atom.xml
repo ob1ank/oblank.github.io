@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://an15m.tk/"/>
-  <updated>2017-08-30T06:28:02.274Z</updated>
+  <updated>2017-08-30T06:39:54.684Z</updated>
   <id>http://an15m.tk/</id>
   
   <author>
@@ -16,11 +16,74 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>fsat git</title>
+    <link href="http://an15m.tk/2017/08/30/fsat-git/"/>
+    <id>http://an15m.tk/2017/08/30/fsat-git/</id>
+    <published>2017-08-30T06:36:33.000Z</published>
+    <updated>2017-08-30T06:39:54.684Z</updated>
+    
+    <content type="html"><![CDATA[<p><excerpt in="" index="" |="" 首页摘要=""><br>让git更快<br><a id="more"></a></excerpt></p>
+<p><the rest="" of="" contents="" |="" 余下全文=""></the></p>
+<h2 id="git-clone慢的解决方法"><a href="#git-clone慢的解决方法" class="headerlink" title="git clone慢的解决方法"></a>git clone慢的解决方法</h2><ul>
+<li>首先你要有一个代理，推荐<a href="https://github.com/shadowsocksr" target="_blank" rel="external">shadowsocksr</a></li>
+</ul>
+<h3 id="为http和https协议设置socks5代理"><a href="#为http和https协议设置socks5代理" class="headerlink" title="为http和https协议设置socks5代理"></a>为<code>http</code>和<code>https</code>协议设置socks5代理</h3><pre><code><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git config --global http.proxy <span class="string">'socks5://&lt;your_proxy_host&gt;:&lt;your_proxy_port&gt;'</span></div><div class="line">git config --global https.proxy <span class="string">'socks5://&lt;your_proxy_host&gt;:&lt;your_proxy_port&gt;'</span></div></pre></td></tr></table></figure>
+</code></pre><h3 id="为git协议设置socks5代理"><a href="#为git协议设置socks5代理" class="headerlink" title="为git协议设置socks5代理"></a>为<code>git</code>协议设置socks5代理</h3><pre><code>- 以下格式使用的是`git`协议：
+    <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git <span class="built_in">clone</span> git://github.com/git/git.git</div></pre></td></tr></table></figure>
+
+- 首先创建一个文件`git-proxy`，写入以下内容：
+    <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#!/bin/bash</span></div><div class="line">nc -x &lt;your_proxy_host&gt;:&lt;your_proxy_port&gt; <span class="variable">$1</span> <span class="variable">$2</span></div></pre></td></tr></table></figure>
+
+  这里的`nc`是`netcat openbsd`而不是`netcat traditional`。
+  给文件添加可执行权限`sudo chmod +x git-proxy`。
+- 将`git-proxy`文件所在文件夹加入环境变量`$PATH`（记得刷新环境变量）。
+- 配置`core.gitProxy`：
+    <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git config --global --add core.gitProxy git-proxy</div></pre></td></tr></table></figure>
+</code></pre><h3 id="为ssh协议设置socck5代理："><a href="#为ssh协议设置socck5代理：" class="headerlink" title="为ssh协议设置socck5代理："></a>为<code>ssh</code>协议设置socck5代理：</h3><pre><code>- 以下格式使用的是`ssh`协议：
+    <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git <span class="built_in">clone</span> git@github.com:git/git.git</div></pre></td></tr></table></figure>
+
+- 在配置之前首先运行以下命令确保你能`ssh`到你想连接的网站。例如`github`：
+    <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh -vT git@github.com</div></pre></td></tr></table></figure>
+
+  出现以下回应说明成功：
+    <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Hi your_username! You&apos;ve successfully authenticated, but GitHub does not provide shell access.</div></pre></td></tr></table></figure>
+
+- 以下方法不一定每个人都能用，取决于你的代理服务商有没有提供相关功能：
+  修改 `~/.ssh/config` 加入如下内容：
+  全局代理：
+    <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ProxyCommand nc -X 5 -x &lt;your_proxy_host&gt;:&lt;your_proxy_port&gt; %h %p</div></pre></td></tr></table></figure>
+
+  特定域名进行代理：
+    <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Host 域名</div><div class="line">ProxyCommand nc -X 5 -x &lt;your_proxy_host&gt;:&lt;your_proxy_port&gt; %h %p</div><div class="line"></div><div class="line">Host github.com</div><div class="line">ProxyCommand nc -X 5 -x &lt;your_proxy_host&gt;:&lt;your_proxy_port&gt; %h %p</div></pre></td></tr></table></figure>
+
+  如果`git clone git@github:git/git.git`长时间无反应，最后报以下错误：
+    <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">ssh_exchange_identification: Connection closed by remote host</div><div class="line">fatal: Could not read from remote repository.</div><div class="line"></div><div class="line">Please make sure you have the correct access rights</div><div class="line">and the repository exists.</div></pre></td></tr></table></figure>
+
+  说明代理服务商不支持相关功能。
+</code></pre><blockquote>
+<p>如果文章对你有帮助,请去我的博客留个言吧! <a href="http://an15m.tk">我的博客</a></p>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;excerpt in=&quot;&quot; index=&quot;&quot; |=&quot;&quot; 首页摘要=&quot;&quot;&gt;&lt;br&gt;让git更快&lt;br&gt;
+    
+    </summary>
+    
+      <category term="git" scheme="http://an15m.tk/categories/git/"/>
+    
+    
+      <category term="git" scheme="http://an15m.tk/tags/git/"/>
+    
+  </entry>
+  
+  <entry>
     <title>git config命令</title>
     <link href="http://an15m.tk/2017/08/30/Hello-an15m/"/>
     <id>http://an15m.tk/2017/08/30/Hello-an15m/</id>
     <published>2017-08-30T02:33:57.000Z</published>
-    <updated>2017-08-30T06:28:02.274Z</updated>
+    <updated>2017-08-30T06:35:54.187Z</updated>
     
     <content type="html"><![CDATA[<p><excerpt in="" index="" |="" 首页摘要=""><br>git config命令相关知识<br><a id="more"></a></excerpt></p>
 <the rest="" of="" contents="" |="" 余下全文="">
@@ -38,7 +101,7 @@
 <li><code>http.sslKey</code>：获取或推送HTTPS时包含SSL私钥的文件。 可以被<code>GIT_SSL_KEY</code>环境变量覆盖。</li>
 </ul>
 <blockquote>
-<p>如果文章对你有帮助,请去我的博客留个言吧! <a href="http://geeksblog.cc" target="_blank" rel="external">我的博客</a></p>
+<p>如果文章对你有帮助,请去我的博客留个言吧! <a href="http://an15m.tk">我的博客</a></p>
 </blockquote>
 </the>]]></content>
     
@@ -62,7 +125,7 @@
     <link href="http://an15m.tk/2017/08/25/Hello-World-0/"/>
     <id>http://an15m.tk/2017/08/25/Hello-World-0/</id>
     <published>2017-08-25T07:19:58.000Z</published>
-    <updated>2017-08-30T03:19:43.221Z</updated>
+    <updated>2017-08-30T03:20:26.201Z</updated>
     
     <content type="html"><![CDATA[<p><excerpt in="" index="" |="" 首页摘要=""><br>nice aaaa<br>bbbbbbb<br><a id="more"></a></excerpt></p>
 <the rest="" of="" contents="" |="" 余下全文="">
