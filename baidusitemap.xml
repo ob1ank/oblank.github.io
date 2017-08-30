@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>http://an15m.tk/2017/08/30/Hello-an15m/</loc>
+    <lastmod>2017-08-30T03:21:52.121Z</lastmod>
+    <data>
+        <display>
+        <title>git config命令</title>
+        <pubTime>2017-08-30T02:33:57.000Z</pubTime>
+        
+        <tag>git</tag>
+         
+         
+           
+             
+              <breadCrumb title="git" url="http://an15m.tk/categories/git/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://an15m.tk/2017/08/25/Hello-World-0/</loc>
     <lastmod>2017-08-30T03:19:43.221Z</lastmod>
     <data>
@@ -17,26 +37,6 @@
            
              
               <breadCrumb title="test" url="http://an15m.tk/categories/test/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://an15m.tk/2017/08/30/Hello-an15m/</loc>
-    <lastmod>2017-08-30T03:13:06.283Z</lastmod>
-    <data>
-        <display>
-        <title>git config命令</title>
-        <pubTime>2017-08-30T02:33:57.000Z</pubTime>
-        
-        <tag>git</tag>
-         
-         
-           
-             
-              <breadCrumb title="git" url="http://an15m.tk/categories/git/"/>
           
         </display>
     </data>
