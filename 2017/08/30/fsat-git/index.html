@@ -17,7 +17,7 @@
 <meta property="og:site_name" content="an15m">
 <meta property="og:description" content="让git更快">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-08-30T06:52:24.840Z">
+<meta property="og:updated_time" content="2017-08-30T06:56:36.202Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="fsat git">
 <meta name="twitter:description" content="让git更快">
@@ -306,24 +306,13 @@
 <h3 id="为git协议设置socks5代理"><a href="#为git协议设置socks5代理" class="headerlink" title="为git协议设置socks5代理"></a>为<code>git</code>协议设置socks5代理</h3><p>以下格式使用的是<code>git</code>协议：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git <span class="built_in">clone</span> git://github.com/git/git.git</div></pre></td></tr></table></figure></p>
 <p>首先创建一个文件<code>git-proxy</code>，写入以下内容：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#!/bin/bash</span></div><div class="line">nc -x &lt;your_proxy_host&gt;:&lt;your_proxy_port&gt; <span class="variable">$1</span> <span class="variable">$2</span></div></pre></td></tr></table></figure></p>
 <p>这里的<code>nc</code>是<code>netcat openbsd</code>而不是<code>netcat traditional</code>。<br>给文件添加可执行权限<code>sudo chmod +x git-proxy</code>。<br>将<code>git-proxy</code>文件所在文件夹加入环境变量<code>$PATH</code>（记得刷新环境变量）。<br>配置<code>core.gitProxy</code>：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git config --global --add core.gitProxy git-proxy</div></pre></td></tr></table></figure></p>
-<h3 id="为ssh协议设置socck5代理："><a href="#为ssh协议设置socck5代理：" class="headerlink" title="为ssh协议设置socck5代理："></a>为<code>ssh</code>协议设置socck5代理：</h3><ul>
-<li><p>以下格式使用的是<code>ssh</code>协议：</p>
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git <span class="built_in">clone</span> git@github.com:git/git.git</div></pre></td></tr></table></figure>
-</li>
-<li><p>在配置之前首先运行以下命令确保你能<code>ssh</code>到你想连接的网站。例如<code>github</code>：</p>
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh -vT git@github.com</div></pre></td></tr></table></figure>
-<p>出现以下回应说明成功：</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Hi your_username! You&apos;ve successfully authenticated, but GitHub does not provide shell access.</div></pre></td></tr></table></figure>
-</li>
-<li><p>以下方法不一定每个人都能用，取决于你的代理服务商有没有提供相关功能：<br>修改 <code>~/.ssh/config</code> 加入如下内容：<br>全局代理：</p>
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ProxyCommand nc -X 5 -x &lt;your_proxy_host&gt;:&lt;your_proxy_port&gt; %h %p</div></pre></td></tr></table></figure>
-<p>特定域名进行代理：</p>
-  <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Host 域名</div><div class="line">ProxyCommand nc -X 5 -x &lt;your_proxy_host&gt;:&lt;your_proxy_port&gt; %h %p</div><div class="line"></div><div class="line">Host github.com</div><div class="line">ProxyCommand nc -X 5 -x &lt;your_proxy_host&gt;:&lt;your_proxy_port&gt; %h %p</div></pre></td></tr></table></figure>
-<p>如果<code>git clone git@github:git/git.git</code>长时间无反应，最后报以下错误：</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">ssh_exchange_identification: Connection closed by remote host</div><div class="line">fatal: Could not read from remote repository.</div><div class="line"></div><div class="line">Please make sure you have the correct access rights</div><div class="line">and the repository exists.</div></pre></td></tr></table></figure>
+<h3 id="为ssh协议设置socck5代理："><a href="#为ssh协议设置socck5代理：" class="headerlink" title="为ssh协议设置socck5代理："></a>为<code>ssh</code>协议设置socck5代理：</h3><h4 id="以下格式使用的是ssh协议："><a href="#以下格式使用的是ssh协议：" class="headerlink" title="以下格式使用的是ssh协议："></a>以下格式使用的是<code>ssh</code>协议：</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git <span class="built_in">clone</span> git@github.com:git/git.git</div></pre></td></tr></table></figure>
+<h4 id="在配置之前首先运行以下命令确保你能ssh到你想连接的网站。例如github："><a href="#在配置之前首先运行以下命令确保你能ssh到你想连接的网站。例如github：" class="headerlink" title="在配置之前首先运行以下命令确保你能ssh到你想连接的网站。例如github："></a>在配置之前首先运行以下命令确保你能<code>ssh</code>到你想连接的网站。例如<code>github</code>：</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh -vT git@github.com</div></pre></td></tr></table></figure>
+<p>出现以下回应说明成功：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Hi your_username! You&apos;ve successfully authenticated, but GitHub does not provide shell access.</div></pre></td></tr></table></figure></p>
+<h4 id="以下方法不一定每个人都能用，取决于你的代理服务商有没有提供相关功能："><a href="#以下方法不一定每个人都能用，取决于你的代理服务商有没有提供相关功能：" class="headerlink" title="以下方法不一定每个人都能用，取决于你的代理服务商有没有提供相关功能："></a>以下方法不一定每个人都能用，取决于你的代理服务商有没有提供相关功能：</h4><p>修改 <code>~/.ssh/config</code> 加入如下内容：<br>全局代理：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ProxyCommand nc -X 5 -x &lt;your_proxy_host&gt;:&lt;your_proxy_port&gt; %h %p</div></pre></td></tr></table></figure></p>
+<p>特定域名进行代理：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Host 域名</div><div class="line">ProxyCommand nc -X 5 -x &lt;your_proxy_host&gt;:&lt;your_proxy_port&gt; %h %p</div><div class="line"></div><div class="line">Host github.com</div><div class="line">ProxyCommand nc -X 5 -x &lt;your_proxy_host&gt;:&lt;your_proxy_port&gt; %h %p</div></pre></td></tr></table></figure></p>
+<p>如果<code>git clone git@github:git/git.git</code>长时间无反应，最后报以下错误：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">ssh_exchange_identification: Connection closed by remote host</div><div class="line">fatal: Could not read from remote repository.</div><div class="line"></div><div class="line">Please make sure you have the correct access rights</div><div class="line">and the repository exists.</div></pre></td></tr></table></figure></p>
 <p>说明代理服务商不支持相关功能。</p>
-</li>
-</ul>
 <blockquote>
 <p>如果文章对你有帮助,请去我的博客留个言吧! <a href="http://an15m.tk">我的博客</a></p>
 </blockquote>
@@ -338,7 +327,7 @@
         <p><span>本文标题:</span><a  href="/2017/08/30/fsat-git/">fsat git</a></p>
         <p><span>文章作者:</span><a  href="/" title="访问 an15m 的个人博客">an15m</a></p>
         <p><span>发布时间:</span>2017年08月30日 - 14时36分</p>
-        <p><span>最后更新:</span>2017年08月30日 - 14时52分</p>
+        <p><span>最后更新:</span>2017年08月30日 - 14时56分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2017/08/30/fsat-git/" title="fsat git">http://an15m.tk/2017/08/30/fsat-git/</a>
             <span class="copy-path" data-clipboard-text="原文: http://an15m.tk/2017/08/30/fsat-git/　　作者: an15m" title=""></span>
@@ -366,7 +355,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#git-clone慢的解决方法"><span class="toc-number">1.</span> <span class="toc-text">git clone慢的解决方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#为http和https协议设置socks5代理"><span class="toc-number">1.1.</span> <span class="toc-text">为http和https协议设置socks5代理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#为git协议设置socks5代理"><span class="toc-number">1.2.</span> <span class="toc-text">为git协议设置socks5代理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#为ssh协议设置socck5代理："><span class="toc-number">1.3.</span> <span class="toc-text">为ssh协议设置socck5代理：</span></a></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#git-clone慢的解决方法"><span class="toc-number">1.</span> <span class="toc-text">git clone慢的解决方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#为http和https协议设置socks5代理"><span class="toc-number">1.1.</span> <span class="toc-text">为http和https协议设置socks5代理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#为git协议设置socks5代理"><span class="toc-number">1.2.</span> <span class="toc-text">为git协议设置socks5代理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#为ssh协议设置socck5代理："><span class="toc-number">1.3.</span> <span class="toc-text">为ssh协议设置socck5代理：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#以下格式使用的是ssh协议："><span class="toc-number">1.3.1.</span> <span class="toc-text">以下格式使用的是ssh协议：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#在配置之前首先运行以下命令确保你能ssh到你想连接的网站。例如github："><span class="toc-number">1.3.2.</span> <span class="toc-text">在配置之前首先运行以下命令确保你能ssh到你想连接的网站。例如github：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#以下方法不一定每个人都能用，取决于你的代理服务商有没有提供相关功能："><span class="toc-number">1.3.3.</span> <span class="toc-text">以下方法不一定每个人都能用，取决于你的代理服务商有没有提供相关功能：</span></a></li></ol></li></ol></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
