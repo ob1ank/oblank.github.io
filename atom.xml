@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://an15m.tk/"/>
-  <updated>2017-08-25T13:51:48.751Z</updated>
+  <updated>2017-08-30T02:53:04.339Z</updated>
   <id>http://an15m.tk/</id>
   
   <author>
@@ -14,6 +14,50 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>git config命令</title>
+    <link href="http://an15m.tk/2017/08/30/Hello-an15m/"/>
+    <id>http://an15m.tk/2017/08/30/Hello-an15m/</id>
+    <published>2017-08-30T02:33:57.000Z</published>
+    <updated>2017-08-30T02:53:04.339Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong> git config命令：</strong> <excerpt in="" index="" |="" 首页摘要=""></excerpt></p>
+<h4 id="git-config-命令"><a href="#git-config-命令" class="headerlink" title="git config 命令"></a>git config 命令</h4><a id="more"></a>
+<p><the rest="" of="" contents="" |="" 余下全文=""></the></p>
+<h4 id="配置目录"><a href="#配置目录" class="headerlink" title="配置目录"></a>配置目录</h4><p>git配置目录分三级:</p>
+<ul>
+<li>仓库级，通过<code>--local</code>配置，在当前仓库下<code>.git/config</code></li>
+<li>全局级，通过<code>--global</code>配置，在用户目录下<code>~/.gitconfig</code></li>
+<li>系统级，通过<code>--system</code>配置，在<code>/etc/gitconfig</code>中</li>
+<li>配置文件的权重是<code>仓库&gt;全局&gt;系统</code></li>
+</ul>
+<h4 id="一些配置详解"><a href="#一些配置详解" class="headerlink" title="一些配置详解"></a>一些配置详解</h4><ul>
+<li><code>core.gitProxy</code>：当使用Git协议抓取时（作为命令主机端口？）执行的“代理命令”，而不是直接建立连接。如果变量值使用“COMMAND FOR DOMAIN”的格式，则该命令仅适用于以指定的域字符串结尾的主机名。该变量可以多次设置，并按照给定的顺序进行匹配; 以第一次匹配到的为准。<br>这个配置可以被<code>GIT_PROXY_COMMAND</code>环境变量覆盖（它始终普遍应用）。<br>特殊字符串<code>none</code>可以用作代理命令来指定给定域模式不使用任何代理。 这有助于在为外部域使用通用代理的同时从代理使用中排除防火墙内的服务器。</li>
+<li><code>http.sslVerify</code>：是否在获取或推送HTTPS时验证SSL证书。 可以被<code>GIT_SSL_NO_VERIY</code>环境变量覆盖。</li>
+<li><code>http.sslCert</code>：获取或推送HTTPS时包含SSL证书的文件。 可以被<code>GIT_SSL_CERT</code>环境变量覆盖。</li>
+<li><code>http.sslKey</code>：获取或推送HTTPS时包含SSL私钥的文件。 可以被<code>GIT_SSL_KEY</code>环境变量覆盖。</li>
+</ul>
+<blockquote>
+<p>如果文章对你有帮助,请去我的博客留个言吧! <a href="http://geeksblog.cc" target="_blank" rel="external">我的博客</a></p>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt; git config命令：&lt;/strong&gt; &lt;excerpt in=&quot;&quot; index=&quot;&quot; |=&quot;&quot; 首页摘要=&quot;&quot;&gt;&lt;/excerpt&gt;&lt;/p&gt;
+&lt;h4 id=&quot;git-config-命令&quot;&gt;&lt;a href=&quot;#git-config-命令&quot; class=&quot;headerlink&quot; title=&quot;git config 命令&quot;&gt;&lt;/a&gt;git config 命令&lt;/h4&gt;
+    
+    </summary>
+    
+      <category term="git" scheme="http://an15m.tk/categories/git/"/>
+    
+    
+      <category term="git" scheme="http://an15m.tk/tags/git/"/>
+    
+      <category term="config" scheme="http://an15m.tk/tags/config/"/>
+    
+  </entry>
   
   <entry>
     <title>Hello World!</title>
