@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://an15m.tk/"/>
-  <updated>2017-08-30T03:05:34.232Z</updated>
+  <updated>2017-08-30T03:07:19.781Z</updated>
   <id>http://an15m.tk/</id>
   
   <author>
@@ -20,9 +20,9 @@
     <link href="http://an15m.tk/2017/08/30/Hello-an15m/"/>
     <id>http://an15m.tk/2017/08/30/Hello-an15m/</id>
     <published>2017-08-30T02:33:57.000Z</published>
-    <updated>2017-08-30T03:05:34.232Z</updated>
+    <updated>2017-08-30T03:07:19.781Z</updated>
     
-    <content type="html"><![CDATA[<p><strong> git config命令：</strong> <excerpt in="" index="" |="" 首页摘要=""></excerpt></p>
+    <content type="html"><![CDATA[<p><excerpt in="" index="" |="" 首页摘要=""></excerpt></p>
 <h3 id="git-config-命令"><a href="#git-config-命令" class="headerlink" title="git config 命令"></a>git config 命令</h3><a id="more"></a>
 <the rest="" of="" contents="" |="" 余下全文="">
 
@@ -45,7 +45,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;&lt;strong&gt; git config命令：&lt;/strong&gt; &lt;excerpt in=&quot;&quot; index=&quot;&quot; |=&quot;&quot; 首页摘要=&quot;&quot;&gt;&lt;/excerpt&gt;&lt;/p&gt;
+      &lt;p&gt;&lt;excerpt in=&quot;&quot; index=&quot;&quot; |=&quot;&quot; 首页摘要=&quot;&quot;&gt;&lt;/excerpt&gt;&lt;/p&gt;
 &lt;h3 id=&quot;git-config-命令&quot;&gt;&lt;a href=&quot;#git-config-命令&quot; class=&quot;headerlink&quot; title=&quot;git config 命令&quot;&gt;&lt;/a&gt;git config 命令&lt;/h3&gt;
     
     </summary>
