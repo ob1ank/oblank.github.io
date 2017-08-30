@@ -5,14 +5,19 @@
     
   <url>
     <loc>http://an15m.tk/2017/08/25/Hello-World-0/</loc>
-    <lastmod>2017-08-30T03:16:56.272Z</lastmod>
+    <lastmod>2017-08-30T03:17:33.687Z</lastmod>
     <data>
         <display>
         <title>Hello World!</title>
         <pubTime>2017-08-25T07:19:58.000Z</pubTime>
         
+        <tag>test</tag>
+         
          
            
+             
+              <breadCrumb title="test" url="http://an15m.tk/categories/test/"/>
+          
         </display>
     </data>
     </url>
