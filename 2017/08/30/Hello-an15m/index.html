@@ -17,7 +17,7 @@
 <meta property="og:site_name" content="an15m">
 <meta property="og:description" content="git config命令：  git config 命令">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-08-30T02:58:14.377Z">
+<meta property="og:updated_time" content="2017-08-30T02:59:22.046Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="git config命令">
 <meta name="twitter:description" content="git config命令：  git config 命令">
@@ -298,16 +298,16 @@
       
           
         <p><strong> git config命令：</strong> <excerpt in="" index="" |="" 首页摘要=""></excerpt></p>
-<h4 id="git-config-命令"><a href="#git-config-命令" class="headerlink" title="git config 命令"></a>git config 命令</h4><a id="more"></a>
+<h2 id="git-config-命令"><a href="#git-config-命令" class="headerlink" title="git config 命令"></a>git config 命令</h2><a id="more"></a>
 <p><the rest="" of="" contents="" |="" 余下全文=""></the></p>
-<h4 id="配置目录"><a href="#配置目录" class="headerlink" title="配置目录"></a>配置目录</h4><p>git配置目录分三级:</p>
+<h2 id="配置目录"><a href="#配置目录" class="headerlink" title="配置目录"></a>配置目录</h2><p>git配置目录分三级:</p>
 <ul>
 <li>仓库级，通过<code>--local</code>配置，在当前仓库下<code>.git/config</code></li>
 <li>全局级，通过<code>--global</code>配置，在用户目录下<code>~/.gitconfig</code></li>
 <li>系统级，通过<code>--system</code>配置，在<code>/etc/gitconfig</code>中</li>
 <li>配置文件的权重是<code>仓库&gt;全局&gt;系统</code></li>
 </ul>
-<h4 id="一些配置详解"><a href="#一些配置详解" class="headerlink" title="一些配置详解"></a>一些配置详解</h4><ul>
+<h2 id="一些配置详解"><a href="#一些配置详解" class="headerlink" title="一些配置详解"></a>一些配置详解</h2><ul>
 <li><code>core.gitProxy</code>：当使用Git协议抓取时（作为命令主机端口？）执行的“代理命令”，而不是直接建立连接。如果变量值使用“COMMAND FOR DOMAIN”的格式，则该命令仅适用于以指定的域字符串结尾的主机名。该变量可以多次设置，并按照给定的顺序进行匹配; 以第一次匹配到的为准。<br>这个配置可以被<code>GIT_PROXY_COMMAND</code>环境变量覆盖（它始终普遍应用）。<br>特殊字符串<code>none</code>可以用作代理命令来指定给定域模式不使用任何代理。 这有助于在为外部域使用通用代理的同时从代理使用中排除防火墙内的服务器。</li>
 <li><code>http.sslVerify</code>：是否在获取或推送HTTPS时验证SSL证书。 可以被<code>GIT_SSL_NO_VERIY</code>环境变量覆盖。</li>
 <li><code>http.sslCert</code>：获取或推送HTTPS时包含SSL证书的文件。 可以被<code>GIT_SSL_CERT</code>环境变量覆盖。</li>
@@ -327,7 +327,7 @@
         <p><span>本文标题:</span><a  href="/2017/08/30/Hello-an15m/">git config命令</a></p>
         <p><span>文章作者:</span><a  href="/" title="访问 an15m 的个人博客">an15m</a></p>
         <p><span>发布时间:</span>2017年08月30日 - 10时33分</p>
-        <p><span>最后更新:</span>2017年08月30日 - 10时58分</p>
+        <p><span>最后更新:</span>2017年08月30日 - 10时59分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2017/08/30/Hello-an15m/" title="git config命令">http://an15m.tk/2017/08/30/Hello-an15m/</a>
             <span class="copy-path" data-clipboard-text="原文: http://an15m.tk/2017/08/30/Hello-an15m/　　作者: an15m" title=""></span>
@@ -355,7 +355,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#git-config-命令"><span class="toc-number">1.</span> <span class="toc-text">git config 命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#配置目录"><span class="toc-number">2.</span> <span class="toc-text">配置目录</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#一些配置详解"><span class="toc-number">3.</span> <span class="toc-text">一些配置详解</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#git-config-命令"><span class="toc-number">1.</span> <span class="toc-text">git config 命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#配置目录"><span class="toc-number">2.</span> <span class="toc-text">配置目录</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#一些配置详解"><span class="toc-number">3.</span> <span class="toc-text">一些配置详解</span></a></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
