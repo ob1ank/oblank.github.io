@@ -1728,14 +1728,16 @@ a {
 }
 
 .article-entry li code,.article-entry p code {
-	padding: 1px 3px;
+	/*padding: 1px 3px;*/
 	margin: 0 3px;
 	font-family: Menlo,Monaco,"Andale Mono","lucida console","Courier New",monospace;
 	word-wrap: break-word;
-	font-size: 14px;
+	/*font-size: 14px;*/
 	/*color: #bc8f8f*/
 	/*an15m*/
 	color: #eee; 
+	font-size: 16px;
+	padding: 2px 3px;
 }
 
 .article-entry blockquote p {
