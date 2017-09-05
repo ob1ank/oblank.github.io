@@ -60,15 +60,15 @@
   
   <entry>
     <title>git config命令</title>
-    <link href="http://an15m.tk/2017/08/30/Hello-an15m/"/>
-    <id>http://an15m.tk/2017/08/30/Hello-an15m/</id>
+    <link href="http://an15m.tk/2017/08/30/git-config/"/>
+    <id>http://an15m.tk/2017/08/30/git-config/</id>
     <published>2017-08-30T02:33:57.000Z</published>
-    <updated>2017-08-30T06:35:54.187Z</updated>
+    <updated>2017-09-05T06:58:52.727Z</updated>
     
     <content type="html"><![CDATA[<p><excerpt in="" index="" |="" 首页摘要=""><br>git config命令相关知识<br><a id="more"></a></excerpt></p>
 <the rest="" of="" contents="" |="" 余下全文="">
 
-<h2 id="配置目录"><a href="#配置目录" class="headerlink" title="配置目录"></a>配置目录</h2><h3 id="git配置目录分三级"><a href="#git配置目录分三级" class="headerlink" title="git配置目录分三级:"></a>git配置目录分三级:</h3><ul>
+<h2 id="配置目录"><a href="#配置目录" class="headerlink" title="配置目录"></a>配置目录</h2><h3 id="git配置目录分三级"><a href="#git配置目录分三级" class="headerlink" title="git配置目录分三级"></a>git配置目录分三级</h3><ul>
 <li>仓库级，通过<code>--local</code>配置，在当前仓库下<code>.git/config</code></li>
 <li>全局级，通过<code>--global</code>配置，在用户目录下<code>~/.gitconfig</code></li>
 <li>系统级，通过<code>--system</code>配置，在<code>/etc/gitconfig</code>中</li>
@@ -95,8 +95,6 @@
     
     
       <category term="git" scheme="http://an15m.tk/tags/git/"/>
-    
-      <category term="config" scheme="http://an15m.tk/tags/config/"/>
     
   </entry>
   

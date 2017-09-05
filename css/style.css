@@ -2359,7 +2359,20 @@ a {
 	white-space: pre
 }
 
-.article-entry p code,.article-entry li code {
+.article-entry p code{
+	margin: 0 3px;
+	border: 1px dashed #000;
+	color: #fff;
+	font-size: 90%;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	font-family: Consolas,"Courier New",Courier;
+	text-shadow: none;
+	background-color: #002b36
+}
+
+/*an15m*/
+.article-entry li code {
 	margin: 0 3px;
 	border: 1px dashed #000;
 	color: #fff;
