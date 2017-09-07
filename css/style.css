@@ -1757,7 +1757,8 @@ a {
 }
 
 .article-entry li ol li:before,.article-entry li ul li:before {
-	content: "\f05d";
+	/*an15m*/
+	/*content: "\f05d";*/
 	font: normal normal normal 18px/1 FontAwesome;
 	display: inline-block;
 	margin: 0 10px;
