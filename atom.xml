@@ -128,12 +128,12 @@
     <link href="http://an15m.tk/2017/09/07/thinking-in-java-v4-2/"/>
     <id>http://an15m.tk/2017/09/07/thinking-in-java-v4-2/</id>
     <published>2017-09-07T09:12:47.000Z</published>
-    <updated>2017-09-07T09:16:27.248Z</updated>
+    <updated>2017-09-07T10:23:39.927Z</updated>
     
-    <content type="html"><![CDATA[<p><excerpt in="" index="" |="" 首页摘要=""><br>JAVA编程思想第四版第二章<br><a id="more"></a></excerpt></p>
+    <content type="html"><![CDATA[<p><excerpt in="" index="" |="" 首页摘要=""><br>第二章 一切都是对象<br><a id="more"></a></excerpt></p>
 <the rest="" of="" contents="" |="" 余下全文="">
 
-<h2 id="第二章-一切都是对象"><a href="#第二章-一切都是对象" class="headerlink" title="第二章 一切都是对象"></a>第二章 一切都是对象</h2><ol>
+<ol>
 <li>数据存储的地方：按快慢：寄存器&gt;堆栈&gt;堆&gt;常量存储&gt;非RAM存储<ol>
 <li>常量存储：存放在程序代码内部</li>
 <li>非RAM存储：存放在程序之外，比如 <em>流对象</em> 和 <em>持久化对象</em></li>
@@ -221,7 +221,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;&lt;excerpt in=&quot;&quot; index=&quot;&quot; |=&quot;&quot; 首页摘要=&quot;&quot;&gt;&lt;br&gt;JAVA编程思想第四版第二章&lt;br&gt;
+      &lt;p&gt;&lt;excerpt in=&quot;&quot; index=&quot;&quot; |=&quot;&quot; 首页摘要=&quot;&quot;&gt;&lt;br&gt;第二章 一切都是对象&lt;br&gt;
     
     </summary>
     
@@ -237,12 +237,12 @@
     <link href="http://an15m.tk/2017/09/07/thinking-in-java-v4-1/"/>
     <id>http://an15m.tk/2017/09/07/thinking-in-java-v4-1/</id>
     <published>2017-09-07T09:06:07.000Z</published>
-    <updated>2017-09-07T09:11:07.296Z</updated>
+    <updated>2017-09-07T10:23:22.979Z</updated>
     
-    <content type="html"><![CDATA[<p><excerpt in="" index="" |="" 首页摘要=""><br>JAVA编程思想第四版第一章<br><a id="more"></a></excerpt></p>
+    <content type="html"><![CDATA[<p><excerpt in="" index="" |="" 首页摘要=""><br>第一章 对象导论<br><a id="more"></a></excerpt></p>
 <the rest="" of="" contents="" |="" 余下全文="">
 
-<h2 id="第一章-对象导论"><a href="#第一章-对象导论" class="headerlink" title="第一章 对象导论"></a>第一章 对象导论</h2><ol>
+<ol>
 <li><code>private</code>关键字：除类型创建者和类型的内部方法之外的任何人都不能访问。<br><code>protected</code>关键字：与<code>private</code>相当，差别在与继承的类可以访问<code>protected</code>成员。</li>
 </ol>
 <blockquote>
@@ -252,7 +252,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;&lt;excerpt in=&quot;&quot; index=&quot;&quot; |=&quot;&quot; 首页摘要=&quot;&quot;&gt;&lt;br&gt;JAVA编程思想第四版第一章&lt;br&gt;
+      &lt;p&gt;&lt;excerpt in=&quot;&quot; index=&quot;&quot; |=&quot;&quot; 首页摘要=&quot;&quot;&gt;&lt;br&gt;第一章 对象导论&lt;br&gt;
     
     </summary>
     
