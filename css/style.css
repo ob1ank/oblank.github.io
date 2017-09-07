@@ -2482,6 +2482,7 @@ a {
 }
 
 .article-entry ul li:before ul li:before {
+	/*an15m*/
 	/*content: "\f05d";*/
 	font: normal normal normal 14px/1 FontAwesome;
 	display: inline-block;
