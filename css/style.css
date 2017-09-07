@@ -1760,7 +1760,9 @@ a {
 	/*an15m*/
 	/*content: "\f05d";*/
 	font: normal normal normal 18px/1 FontAwesome;
-	display: inline-block;
+	/*an15m*/
+	display: none;
+	/*display: inline-block;*/
 	margin: 0 10px;
 	line-height: 28px
 }
@@ -2485,7 +2487,9 @@ a {
 	/*an15m*/
 	/*content: "\f05d";*/
 	font: normal normal normal 14px/1 FontAwesome;
-	display: inline-block;
+	/*an15m*/
+	display: none;
+	/*display: inline-block;*/
 	margin: 0 10px;
 	line-height: 28px
 }
