@@ -7,16 +7,20 @@
   
   
   
-  <title>thinking in java v4 5 | an15m</title>
+  <title>JAVA编程思想第四版第五章 | an15m</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
-<meta property="og:title" content="thinking in java v4 5">
+  <meta name="description" content="第五章 初始化与清理">
+<meta name="keywords" content="java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JAVA编程思想第四版第五章">
 <meta property="og:url" content="http://an15m.tk/2017/09/07/thinking-in-java-v4-5/index.html">
 <meta property="og:site_name" content="an15m">
+<meta property="og:description" content="第五章 初始化与清理">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-07T09:13:12.200Z">
+<meta property="og:updated_time" content="2017-09-07T11:07:24.233Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="thinking in java v4 5">
+<meta name="twitter:title" content="JAVA编程思想第四版第五章">
+<meta name="twitter:description" content="第五章 初始化与清理">
   
   
     <link rel="icon" href="/img/k.ico">
@@ -267,7 +271,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      thinking in java v4 5
+      JAVA编程思想第四版第五章
     </h1>
   
 
@@ -276,8 +280,16 @@
       
       <div class="article-info article-info-post">
         
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/JAVA编程思想v4/">JAVA编程思想v4</a>
+    </div>
+
 
         
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
+    </div>
+
         <div class="clearfix"></div>
       </div>
       
@@ -285,25 +297,70 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <excerpt in="" index="" |="" 首页摘要="">
-
-<a id="more"></a>
+        <p><excerpt in="" index="" |="" 首页摘要=""><br>第五章 初始化与清理<br><a id="more"></a></excerpt></p>
 <the rest="" of="" contents="" |="" 余下全文="">
 
-
-
-
-
-
-
-
-
-
-
+<h2 id="用构造器确保初始化"><a href="#用构造器确保初始化" class="headerlink" title="用构造器确保初始化"></a>用构造器确保初始化</h2><ul>
+<li>构造器必须与类同名，并且没有返回值，这与返回值为空(void)不同。</li>
+<li>在java中，“创建”和“初始化”是捆绑在一起的，两者不能分离。</li>
+</ul>
+<h2 id="方法重载"><a href="#方法重载" class="headerlink" title="方法重载"></a>方法重载</h2><ul>
+<li>参数顺序的不同，也可以区别两个方法。</li>
+</ul>
+<h2 id="this关键字"><a href="#this关键字" class="headerlink" title="this关键字"></a>this关键字</h2><ul>
+<li><code>this</code>关键字的含义：调用这个方法的对象的引用。</li>
+<li>在一个类中，调用类中的某个方法，需要在前面加<code>this</code>关键字，但是在方法内部调用同一个类中的另一个方法，不需要写<code>this</code>。也就是说只有在类主体中调用类中的方法，才需要用到<code>this</code>关键字。</li>
+</ul>
+<h2 id="清理：最终处理和垃圾回收"><a href="#清理：最终处理和垃圾回收" class="headerlink" title="清理：最终处理和垃圾回收"></a>清理：最终处理和垃圾回收</h2><ul>
+<li>java的垃圾回收器只能释放由<code>new</code>分配的内存。</li>
+<li>对象可能不被回收：如果java虚拟机(JVM)并未面临内存耗尽的情形，它是不会浪费实践去执行垃圾回收以回复内存的。</li>
+<li>java允许在类中定义个<code>finalize()</code>方法，当垃圾回收器将要释放无用对象的内存时，先调用该对象的<code>finalize()</code>方法。如果在程序终止之前垃圾回收器始终没有执行垃圾回收操作，那么垃圾回收器将始终不会调用无用对象的<code>finalize()</code>方法。但是，很重要，垃圾回收什么时候发生，会不会发生，没有人可以预知，就算是使用了<code>System.gc()</code>或<code>Runtime.gc()</code>方法，垃圾回收也不一定会发生。所以，慎用！</li>
+</ul>
+<h2 id="初始化顺序"><a href="#初始化顺序" class="headerlink" title="初始化顺序"></a>初始化顺序</h2><ol>
+<li>在类的内部，变量定义的先后顺序决定了初始化的顺序。即使变量定义散步于方法定义之间，他们仍旧会在任何方法(包括构造器)被调用之前就得到初始化。</li>
+<li>静态初始化只有在必要时刻才初始化。</li>
+<li>初始化的顺序是先静态对象(如果它们尚未初始化)，然后是“非静态”对象。</li>
+<li>构造器可以看成是静态方法。</li>
+<li><p>显式的静态初始化：通过“静态块”，例如：</p>
+ <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">static</span> <span class="keyword">int</span> i;</div><div class="line"><span class="keyword">static</span> <span class="keyword">int</span> j;</div><div class="line"><span class="keyword">static</span> &#123;</div><div class="line">    i = <span class="number">1</span>;</div><div class="line">    j = <span class="number">2</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>同样的，显式的静态初始化代码，也只有在必须的时候才会执行。</p>
+</li>
+</ol>
+<h2 id="非静态实例初始化"><a href="#非静态实例初始化" class="headerlink" title="非静态实例初始化"></a>非静态实例初始化</h2><p>java中也有被称为实例初始化的类似语法，用来初始化每一个对象的非静态变量。例如：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> class <span class="title">Init</span><span class="params">()</span></span>&#123;</div><div class="line">    <span class="keyword">int</span> i;</div><div class="line">    <span class="keyword">int</span> j;</div><div class="line">    &#123;</div><div class="line">        i = <span class="number">1</span>;</div><div class="line">        j = <span class="number">2</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="数组初始化"><a href="#数组初始化" class="headerlink" title="数组初始化"></a>数组初始化</h2><ol>
+<li><code>int[] a = {1,2,3}</code>，这种数组初始化方式等价于使用<code>new</code>。</li>
+<li><p>数组之间赋值，例如：</p>
+ <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span>[] a1 = &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>&#125;;</div><div class="line"><span class="keyword">int</span>[] a2 = a1;</div></pre></td></tr></table></figure>
+<p>真正复制的其实是一个引用，也就是说，当改变<code>a2</code>时，<code>a1</code>也会跟着变。</p>
+</li>
+<li>基本类型的数组在创建后会被自动初始化为默认值。</li>
+<li>非基本类型的数组必须手动初始化。</li>
+<li><p>可变参数列表，例如：</p>
+ <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">f</span><span class="params">(<span class="keyword">int</span> a, String... b)</span></span>&#123;</div><div class="line">    <span class="comment">//codes...</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>上例中，可以传入0 ~ N个字符串。另外，可变参数必须方法参数列表的最后。</p>
+</li>
+</ol>
+<h2 id="枚举类型enum"><a href="#枚举类型enum" class="headerlink" title="枚举类型enum"></a>枚举类型enum</h2><ol>
+<li><p>枚举类型的实例是常量，因此按照命名习惯它们都用大写字母表示(如果一个名字中有多个单词，用下划线将它们隔开)。例如：</p>
+ <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="keyword">enum</span> Directions&#123;</div><div class="line">    EAST , WEST , SOUTH , NORTH , NORTH_EAST , SOUTH_WEST</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>为了使用<code>enum</code>，需要创建一个该类型的引用，并将其赋值给某个实例：</p>
+ <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Directions east = Directions.EAST;</div><div class="line">System.out.println(east);</div></pre></td></tr></table></figure>
+</li>
+<li><p>在你创建<code>enum</code>时，编译器会自动添加一些有用的特性。例如，自动创建<code>toString()</code>方法来转换成字符串，<code>ordinal()</code>方法来表示某个特定<code>enum</code>常量的声明顺序、<code>static values()</code>方法用来按照<code>enum</code>常量的声明顺序，产生由这些常量值构成的数组：</p>
+ <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span>(Directions d : Directions.values())&#123;</div><div class="line">  System.out.println(d + <span class="string">", ordinal "</span> + d.ordinal());</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p><code>enum</code>是一个类，并且拥有自己的方法。</p>
+</li>
+<li><p><code>enum</code>与<code>switch</code>的完美配合：</p>
+ <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">Directions direction;</div><div class="line"><span class="keyword">switch</span>(direction)&#123;</div><div class="line">    <span class="keyword">case</span> EAST: System.out.println(<span class="string">"The direction of east."</span>);<span class="keyword">break</span>;</div><div class="line">    <span class="keyword">case</span> WEST: System.out.println(<span class="string">"The direction of west."</span>);<span class="keyword">break</span>;</div><div class="line">    <span class="keyword">case</span> NORTH: System.out.println(<span class="string">"The direction of north."</span>);<span class="keyword">break</span>;</div><div class="line">    <span class="keyword">case</span> SOUTH: System.out.println(<span class="string">"The direction of south."</span>);<span class="keyword">break</span>;</div><div class="line">    <span class="keyword">case</span> NORTH_EAST: System.out.println(<span class="string">"The direction of north-east."</span>);<span class="keyword">break</span>;</div><div class="line">    <span class="keyword">case</span> SOUTH_WEST: System.out.println(<span class="string">"The direction of south-west."</span>);<span class="keyword">break</span>;</div><div class="line">    <span class="keyword">default</span>: System.out.println(<span class="string">"Other directions."</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>其实<code>default</code>不是必须的，因为你知道有多少种可能性，不可能有未知的可能性。</p>
+</li>
+</ol>
 <blockquote>
 <p>如果文章对你有帮助,请去我的博客留个言吧! <a href="http://an15m.tk">我的博客</a></p>
 </blockquote>
-</the></excerpt>
+</the>
       
     </div>
     
@@ -311,12 +368,12 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a  href="/2017/09/07/thinking-in-java-v4-5/">thinking in java v4 5</a></p>
+        <p><span>本文标题:</span><a  href="/2017/09/07/thinking-in-java-v4-5/">JAVA编程思想第四版第五章</a></p>
         <p><span>文章作者:</span><a  href="/" title="访问 an15m 的个人博客">an15m</a></p>
         <p><span>发布时间:</span>2017年09月07日 - 17时13分</p>
-        <p><span>最后更新:</span>2017年09月07日 - 17时13分</p>
+        <p><span>最后更新:</span>2017年09月07日 - 19时07分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2017/09/07/thinking-in-java-v4-5/" title="thinking in java v4 5">http://an15m.tk/2017/09/07/thinking-in-java-v4-5/</a>
+            <span>原始链接:</span><a class="post-url" href="/2017/09/07/thinking-in-java-v4-5/" title="JAVA编程思想第四版第五章">http://an15m.tk/2017/09/07/thinking-in-java-v4-5/</a>
             <span class="copy-path" data-clipboard-text="原文: http://an15m.tk/2017/09/07/thinking-in-java-v4-5/　　作者: an15m" title=""></span>
         </p>
         <p>
@@ -342,7 +399,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#用构造器确保初始化"><span class="toc-number">1.</span> <span class="toc-text">用构造器确保初始化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#方法重载"><span class="toc-number">2.</span> <span class="toc-text">方法重载</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#this关键字"><span class="toc-number">3.</span> <span class="toc-text">this关键字</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#清理：最终处理和垃圾回收"><span class="toc-number">4.</span> <span class="toc-text">清理：最终处理和垃圾回收</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#初始化顺序"><span class="toc-number">5.</span> <span class="toc-text">初始化顺序</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#非静态实例初始化"><span class="toc-number">6.</span> <span class="toc-text">非静态实例初始化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数组初始化"><span class="toc-number">7.</span> <span class="toc-text">数组初始化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#枚举类型enum"><span class="toc-number">8.</span> <span class="toc-text">枚举类型enum</span></a></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
@@ -421,7 +478,7 @@
             </a>
         
     </div>
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/09/07/thinking-in-java-v4-5/">thinking in java v4 5</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/07/thinking-in-java-v4-4/">JAVA编程思想第四版第四章</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/07/thinking-in-java-v4-3/">JAVA编程思想第四版第三章</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/07/thinking-in-java-v4-2/">JAVA编程思想第四版第二章</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/07/thinking-in-java-v4-1/">JAVA编程思想第四版第一章</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/30/fsat-git/">fsat git</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/30/git-config/">git config命令</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/09/07/thinking-in-java-v4-5/">JAVA编程思想第四版第五章</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/07/thinking-in-java-v4-4/">JAVA编程思想第四版第四章</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/07/thinking-in-java-v4-3/">JAVA编程思想第四版第三章</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/07/thinking-in-java-v4-2/">JAVA编程思想第四版第二章</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/07/thinking-in-java-v4-1/">JAVA编程思想第四版第一章</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/30/fsat-git/">fsat git</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/30/git-config/">git config命令</a></li></ul>
     <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
     <script>
         $(".post-list").addClass("toc-article");
