@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://an15m.tk/about/index.html</loc>
+    
+    <lastmod>2017-09-07T08:58:32.726Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://an15m.tk/2017/08/30/git-config/</loc>
     
     <lastmod>2017-09-05T06:58:52.727Z</lastmod>
@@ -12,20 +19,6 @@
     <loc>http://an15m.tk/2017/08/30/fsat-git/</loc>
     
     <lastmod>2017-09-05T06:48:06.640Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://an15m.tk/2017/08/25/Hello-World-0/</loc>
-    
-    <lastmod>2017-08-30T03:20:26.201Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://an15m.tk/about/index.html</loc>
-    
-    <lastmod>2017-08-25T08:18:12.136Z</lastmod>
     
   </url>
   

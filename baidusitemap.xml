@@ -3,6 +3,7 @@
 
 
     
+    
   <url>
     <loc>http://an15m.tk/2017/08/30/git-config/</loc>
     <lastmod>2017-09-05T06:58:52.727Z</lastmod>
@@ -42,27 +43,6 @@
     </data>
     </url>
 
-    
-  <url>
-    <loc>http://an15m.tk/2017/08/25/Hello-World-0/</loc>
-    <lastmod>2017-08-30T03:20:26.201Z</lastmod>
-    <data>
-        <display>
-        <title>Hello World!</title>
-        <pubTime>2017-08-25T07:19:58.000Z</pubTime>
-        
-        <tag>test</tag>
-         
-         
-           
-             
-              <breadCrumb title="test" url="http://an15m.tk/categories/test/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
     
     
 </urlset>
