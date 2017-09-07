@@ -17,7 +17,7 @@
 <meta property="og:site_name" content="an15m">
 <meta property="og:description" content="第四章  执行控制流程">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-07T11:03:31.289Z">
+<meta property="og:updated_time" content="2017-09-07T11:04:03.695Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JAVA编程思想第四版第四章">
 <meta name="twitter:description" content="第四章  执行控制流程">
@@ -305,7 +305,7 @@
 <li>java不支持<code>goto</code>语句，但仍可以进行类似的跳转，但比起典型的<code>goto</code>有了很多限制。另外，<code>goto</code>仍然是java中的一个保留字。</li>
 <li><p>标签的使用：标签是后面跟有冒号的标识符，就像<code>label1:</code>这样。java中标签要写在迭代语句之前，中间最好不要有任何其他语句。假如有以下代码：</p>
  <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">label1:</div><div class="line">outer-iteration&#123;</div><div class="line">    inter-iteration&#123;</div><div class="line">        <span class="comment">//...</span></div><div class="line">        <span class="keyword">break</span>; <span class="comment">//(1)</span></div><div class="line">        <span class="comment">//...</span></div><div class="line">        <span class="keyword">continue</span>; <span class="comment">//(2)</span></div><div class="line">        <span class="comment">//...</span></div><div class="line">        <span class="keyword">continue</span> label1; <span class="comment">//(3)</span></div><div class="line">        <span class="comment">//...</span></div><div class="line">        <span class="keyword">break</span> label1; <span class="comment">//(4)</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p> 在(1)中，<code>break</code>中断内部迭代，回到外部迭代。<br>在(2)中，<code>continue</code>是执行点移回内部迭代的起始处。<br>在(3)中，<code>continue label1</code>同时中断内部迭代以及外部迭代，直接转到<code>label1</code>处；随后，它实际上是继续迭代过程，但却从外部迭代开始。<br>在(4)中，<code>break label1</code>也会中断所有迭代，并回到<code>label1</code>处，但并不重新进入迭代，它实际上是完全终止了两个迭代。</p>
+<p> 在(1)中，<code>break</code>中断内部迭代，回到外部迭代。<br> 在(2)中，<code>continue</code>是执行点移回内部迭代的起始处。<br> 在(3)中，<code>continue label1</code>同时中断内部迭代以及外部迭代，直接转到<code>label1</code>处；随后，它实际上是继续迭代过程，但却从外部迭代开始。<br> 在(4)中，<code>break label1</code>也会中断所有迭代，并回到<code>label1</code>处，但并不重新进入迭代，它实际上是完全终止了两个迭代。</p>
 </li>
 </ol>
 <h2 id="switch"><a href="#switch" class="headerlink" title="switch"></a>switch</h2><p>switch中的选择因子必须是<code>int</code>或<code>char</code>那样的整数值(java7以后也可以使用字符串)。</p>
@@ -323,7 +323,7 @@
         <p><span>本文标题:</span><a  href="/2017/09/07/thinking-in-java-v4-4/">JAVA编程思想第四版第四章</a></p>
         <p><span>文章作者:</span><a  href="/" title="访问 an15m 的个人博客">an15m</a></p>
         <p><span>发布时间:</span>2017年09月07日 - 17时12分</p>
-        <p><span>最后更新:</span>2017年09月07日 - 19时03分</p>
+        <p><span>最后更新:</span>2017年09月07日 - 19时04分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2017/09/07/thinking-in-java-v4-4/" title="JAVA编程思想第四版第四章">http://an15m.tk/2017/09/07/thinking-in-java-v4-4/</a>
             <span class="copy-path" data-clipboard-text="原文: http://an15m.tk/2017/09/07/thinking-in-java-v4-4/　　作者: an15m" title=""></span>
