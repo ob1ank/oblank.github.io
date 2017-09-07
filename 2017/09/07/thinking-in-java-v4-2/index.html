@@ -7,20 +7,20 @@
   
   
   
-  <title>JAVA编程思想第四版第一章 | an15m</title>
+  <title>JAVA编程思想第四版第二章 | an15m</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="JAVA编程思想第四版第一章">
+  <meta name="description" content="JAVA编程思想第四版第二章">
 <meta name="keywords" content="java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JAVA编程思想第四版第一章">
-<meta property="og:url" content="http://an15m.tk/2017/09/07/thinking-in-java-v4-1/index.html">
+<meta property="og:title" content="JAVA编程思想第四版第二章">
+<meta property="og:url" content="http://an15m.tk/2017/09/07/thinking-in-java-v4-2/index.html">
 <meta property="og:site_name" content="an15m">
-<meta property="og:description" content="JAVA编程思想第四版第一章">
+<meta property="og:description" content="JAVA编程思想第四版第二章">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-07T09:11:07.296Z">
+<meta property="og:updated_time" content="2017-09-07T09:14:39.724Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JAVA编程思想第四版第一章">
-<meta name="twitter:description" content="JAVA编程思想第四版第一章">
+<meta name="twitter:title" content="JAVA编程思想第四版第二章">
+<meta name="twitter:description" content="JAVA编程思想第四版第二章">
   
   
     <link rel="icon" href="/img/k.ico">
@@ -253,11 +253,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-thinking-in-java-v4-1" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-thinking-in-java-v4-2" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2017/09/07/thinking-in-java-v4-1/" class="article-date">
-      <time datetime="2017-09-07T09:06:07.000Z" itemprop="datePublished">2017-09-07</time>
+      <a  href="/2017/09/07/thinking-in-java-v4-2/" class="article-date">
+      <time datetime="2017-09-07T09:12:47.000Z" itemprop="datePublished">2017-09-07</time>
 </a>
 
     </div>
@@ -271,7 +271,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      JAVA编程思想第四版第一章
+      JAVA编程思想第四版第二章
     </h1>
   
 
@@ -281,7 +281,7 @@
       <div class="article-info article-info-post">
         
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/java编程思想v4/">java编程思想v4</a>
+    <a class="article-category-link" href="/categories/JAVA编程思想v4/">JAVA编程思想v4</a>
     </div>
 
 
@@ -297,11 +297,89 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p><excerpt in="" index="" |="" 首页摘要=""><br>JAVA编程思想第四版第一章<br><a id="more"></a></excerpt></p>
+        <p><excerpt in="" index="" |="" 首页摘要=""><br>JAVA编程思想第四版第二章<br><a id="more"></a></excerpt></p>
 <the rest="" of="" contents="" |="" 余下全文="">
 
-<h2 id="第一章-对象导论"><a href="#第一章-对象导论" class="headerlink" title="第一章 对象导论"></a>第一章 对象导论</h2><ol>
-<li><code>private</code>关键字：除类型创建者和类型的内部方法之外的任何人都不能访问。<br><code>protected</code>关键字：与<code>private</code>相当，差别在与继承的类可以访问<code>protected</code>成员。</li>
+<h2 id="第二章-一切都是对象"><a href="#第二章-一切都是对象" class="headerlink" title="第二章 一切都是对象"></a>第二章 一切都是对象</h2><ol>
+<li>数据存储的地方：按快慢：寄存器&gt;堆栈&gt;堆&gt;常量存储&gt;非RAM存储<ul>
+<li>常量存储：存放在程序代码内部</li>
+<li>非RAM存储：存放在程序之外，比如 <em>流对象</em> 和 <em>持久化对象</em></li>
+</ul>
+</li>
+<li>基本类型和非基本类型的区别<br> <input type="hidden" value="Just for something ! You can ignore it."><ul>
+<li>非基本类型使用<code>new</code>关键字来初始化，存储于堆中，操作非基本类型使用的实际上是对象的一个“引用”，而非对象本身。</li>
+<li>基本类型的创建不用<code>new</code>关键字，而是创建一个非引用的“自动”变量，直接存储“值”，存储于堆栈中，比存储于堆中更加高效。另外，java基本类型所占存储空间的大小不随机器硬件架构的变化而变化。</li>
+<li>java中存在基本类型的包装类型，比如int的包装类型为Integer类型，可以使用<code>new Integer(1);</code>或<code>Integer integer = 3;</code>在堆中创建一个非基本类型，来表示对应的基本类型。</li>
+</ul>
+</li>
+<li><p>java中不允许在C和C++里将一个较大作用域的变量“隐藏”起来的做法，以下代码是错误的：</p>
+ <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="keyword">int</span> x = <span class="number">12</span>;</div><div class="line">    &#123;</div><div class="line">        <span class="keyword">int</span> x = <span class="number">9</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>java对象不具备和基本类型一样的生命周期。当用<code>new</code>创建一个java对象时，它可以存活于作用域之外。例如以下代码：</p>
+ <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    String s = <span class="keyword">new</span> String(<span class="string">"a string"</span>);</div><div class="line">&#125;<span class="comment">//作用域终点</span></div></pre></td></tr></table></figure>
+<p> 引用s在作用域终点就消失了，然而，s指向的String对象仍继续占据内存空间。</p>
+</li>
+<li>当变量作为 <em>类的成员</em> 时，java会自动用默认值对其进行初始化；但当变量作为 <em>局部变量</em> (并非某个类的字段)时，java不会对其进行自动初始化。</li>
+<li><p><code>static</code>关键字<br>java中的 <em>成员</em> 与 <em>方法</em> 都是与类绑定的，只有通过<code>new</code>创建那个类的对象，该类的 <em>成员</em> 和 <em>方法</em> 才可以被外界调用。<br>有两种情形是用上述方法无法满足的。一是情况是想给某特定域分配单一存储空间，而不去考虑究竟要创建多少对象，甚至根本就不创建任何对象。另一种情况是希望某个方法不与包换它的类的任何对象关联在一起，也就是说，即使没有创建对象，也可以调用这个方法。<br><code>static</code>可以满足这两方面的需求。当声明一个事物是<code>static</code>时，就意味着这个域或者方法不会与包含它的那个类的任何对象事例关联在一起。所以，即使从未创建某个类的任何对象，也可以调用其<code>static</code>方法或访问其<code>static</code>域。假设有以下代码：</p>
+ <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">StaticTest</span></span>&#123;</div><div class="line">  <span class="keyword">static</span> <span class="keyword">int</span> i = <span class="number">47</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p> 现在，即使你创建了两个<code>StaticTest</code>对象，<code>StaticTest.i</code>也只有一份存储空间，这两个对象共享同一个<code>i</code>。如果继续写：</p>
+ <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">StaticTest st1 = <span class="keyword">new</span> StaticTest();</div><div class="line">StaticTest st2 = <span class="keyword">new</span> StaticTest();</div></pre></td></tr></table></figure>
+<p> 在这里，<code>st1.i</code>和<code>st2.i</code>指向同一存储空间，因此他们具有相同的值47。<br>引用<code>static</code>变量有两种方法。一是通过一个对象去定位它，如<code>st1.i</code>；也可以通过类名直接引用，如<code>StaticTest.i</code>,而这对于非静态成员则不行。</p>
+</li>
+<li><p>注释文档<br>如果代码与文档是分离的，那么在每次修改代码时，都需要修改相应的文档。javadoc允许你将代码与文档写在一个文件内，然后由javadoc去提取注释。javadoc的输出是一个HTML文档。此外，如果想对javadoc处理过的信息执行特殊的操作，那么可以通过编写你自己的被称为“doclets”的javadoc处理器来实现。下面介绍javadoc的语法：</p>
+<ul>
+<li>所有javadoc命令都只能在<code>/**</code>注释中出现，结束和通常一样使用<code>*/</code>。</li>
+<li>使用javadoc的方式主要有两种：嵌入HTML或使用“文档标签”。 <em>独立文档标签</em> 是一些以“@”字符开头的命令，要置于注释行的最前面。 <em>行内文档标签</em> (在花括号内)可以出现在javadoc注释中的任何地方，也是以“@”开头。</li>
+<li><p>共有三种类型的注释文档，分别对应与注释位置后面的三种元素：类、域和方法。例：</p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/** 类注释 */</span></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Documentation</span></span>&#123;</div><div class="line">  <span class="comment">/** 域注释 */</span></div><div class="line">  <span class="keyword">public</span> <span class="keyword">int</span> i;</div><div class="line">  <span class="comment">/** 方法注释 */</span></div><div class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">f</span><span class="params">()</span></span>&#123;&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>javadoc只能为<code>public</code>和<code>protected</code>成员进行文档注释。<code>private</code>和包内可访问成员的注释会被忽略掉(可以用<code>-private</code>参数将<code>private</code>成员的注释也包括在内)</p>
+</li>
+<li><p>嵌入式HTML：javadoc支持利用HTML对文档进行格式化，例如：</p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"><span class="comment">* &lt;pre&gt;</span></div><div class="line"><span class="comment">* System.out..println(new Date());</span></div><div class="line"><span class="comment">* &lt;/pre&gt;</span></div><div class="line"><span class="comment">*/</span></div></pre></td></tr></table></figure>
+<p>  不要在嵌入式HTML中使用标题标签，例如<code>&lt;h1&gt;</code>或<code>&lt;hr&gt;</code>，因为javadoc会插入自己的标题，而你的标题可能同它们发生冲突。</p>
+</li>
+<li>注意，在文档注释中，位于每一行开头的<code>*</code>和前导空格都会被javadoc丢弃。</li>
+<li><p>一些标签示例：</p>
+<ul>
+<li><p><code>@see</code> ：引用其他类。<code>@see</code>标签允许用户引用其他类的文档。javadoc会在其生成的文件中，通过<code>@see</code>标签链接到其他文档。格式如下：</p>
+  <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@see</span> classname</div><div class="line"><span class="meta">@see</span> fully-qualified-classname    <span class="comment">//无歧义类名</span></div><div class="line">@see fully-qualified-classname#method-name</div></pre></td></tr></table></figure>
+<p>  上述每种格式都会在生成的文档中加入一个具有超链接的“See Also”(参见)条目。但是javadoc不会检查你所提供的超链接是否有效。</p>
+</li>
+<li><code>{@link package.class#member label}</code>：该标签与<code>@see</code>标签极其相似，只是它用与行内，并且是用“label”作为超链接文本而不用“See Also”。</li>
+<li><code>{@docRoot}</code>：该标签产生到文档根目录的相对路径，用于文档树页面的显式超链接。</li>
+<li><code>{@inheritDoc}</code>：该标签从当前这个类的最直接的基类中继承相关文档到当前的文档注释中。</li>
+<li><p><code>@version</code>：格式如下：</p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@version</span> version-information</div></pre></td></tr></table></figure>
+<p>  其中，“version-information”可以是任何你认为适合包含在版本说明中的重要信息。javadoc通过<code>-version</code>参数来获取版本信息。</p>
+</li>
+<li><p><code>@author</code>：格式如下：</p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@author</span> author-information</div></pre></td></tr></table></figure>
+<p>  其中，“author-information”可以包含作者姓名、电子邮件或其他适宜的信息。javadoc通过<code>-author</code>获取作者信息。使用多个标签列出所有作者是，他们必须连续放置。</p>
+</li>
+<li><code>@since</code>：最早使用该方法、类或接口的版本</li>
+<li><p><code>@param</code>：格式如下：</p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@param</span> parammeter-name description</div></pre></td></tr></table></figure>
+<p>  “parammeter-name”为参数名，“description”为说明，可以给每个参数写一个。</p>
+</li>
+<li><p><code>@return</code>：格式如下：</p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@return</span> description</div></pre></td></tr></table></figure>
+<p>  “description”用来描述返回值的信息。</p>
+</li>
+<li><p><code>@throws</code>：格式如下：</p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@throws</span> fully-qualified-<span class="class"><span class="keyword">class</span>-<span class="title">name</span> <span class="title">description</span></span></div></pre></td></tr></table></figure>
+<p>  “fully-qualified-class-name”为一个异常类的无歧义名字。对所有可能抛出的异常类都要进行说明。</p>
+</li>
+<li><code>@deprecated</code>：该标签用于指出一些旧特性已由改进的新特性取代。Java SE5中，该标签已被<code>@Deprecated</code>标签取代。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>编码风格：<ul>
+<li>类名首字母要大写</li>
+<li>如果类名由几个单词构成，那么把它们并在一起(不要用下划线来分隔名字)，其中每个内部单词的首字母都采用大写形式。这种风格有时称作“驼峰风格”。几乎其他所有内容——方法、字段(成员变量)以及对象引用名称等，都用这种格式，不一样的只是标识符的第一个字母采用小写。</li>
+</ul>
+</li>
 </ol>
 <blockquote>
 <p>如果文章对你有帮助,请去我的博客留个言吧! <a href="http://an15m.tk">我的博客</a></p>
@@ -314,13 +392,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a  href="/2017/09/07/thinking-in-java-v4-1/">JAVA编程思想第四版第一章</a></p>
+        <p><span>本文标题:</span><a  href="/2017/09/07/thinking-in-java-v4-2/">JAVA编程思想第四版第二章</a></p>
         <p><span>文章作者:</span><a  href="/" title="访问 an15m 的个人博客">an15m</a></p>
-        <p><span>发布时间:</span>2017年09月07日 - 17时06分</p>
-        <p><span>最后更新:</span>2017年09月07日 - 17时11分</p>
+        <p><span>发布时间:</span>2017年09月07日 - 17时12分</p>
+        <p><span>最后更新:</span>2017年09月07日 - 17时14分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2017/09/07/thinking-in-java-v4-1/" title="JAVA编程思想第四版第一章">http://an15m.tk/2017/09/07/thinking-in-java-v4-1/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://an15m.tk/2017/09/07/thinking-in-java-v4-1/　　作者: an15m" title=""></span>
+            <span>原始链接:</span><a class="post-url" href="/2017/09/07/thinking-in-java-v4-2/" title="JAVA编程思想第四版第二章">http://an15m.tk/2017/09/07/thinking-in-java-v4-2/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://an15m.tk/2017/09/07/thinking-in-java-v4-2/　　作者: an15m" title=""></span>
         </p>
         <p>
             <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
@@ -331,18 +409,18 @@
 
 <nav id="article-nav">
   
-    <a  href="/2017/09/07/thinking-in-java-v4-2/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a  href="/2017/09/07/thinking-in-java-v4-3/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          JAVA编程思想第四版第二章
+          thinking in java v4 3
         
       </div>
     </a>
   
   
-    <a  href="/2017/08/30/fsat-git/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">fsat git</div>
+    <a  href="/2017/09/07/thinking-in-java-v4-1/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">JAVA编程思想第四版第一章</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -354,7 +432,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#第一章-对象导论"><span class="toc-number">1.</span> <span class="toc-text">第一章 对象导论</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#第二章-一切都是对象"><span class="toc-number">1.</span> <span class="toc-text">第二章 一切都是对象</span></a></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
@@ -424,13 +502,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a  href="/2017/09/07/thinking-in-java-v4-2/" title="上一篇: JAVA编程思想第四版第二章">
+            <a  href="/2017/09/07/thinking-in-java-v4-3/" title="上一篇: thinking in java v4 3">
                 <i class="fa fa-angle-left"></i>
             </a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a  href="/2017/08/30/fsat-git/" title="下一篇: fsat git">
+            <a  href="/2017/09/07/thinking-in-java-v4-1/" title="下一篇: JAVA编程思想第四版第一章">
                 <i class="fa fa-angle-right"></i>
             </a>
         
