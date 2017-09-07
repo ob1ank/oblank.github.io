@@ -128,22 +128,22 @@
     <link href="http://an15m.tk/2017/09/07/thinking-in-java-v4-2/"/>
     <id>http://an15m.tk/2017/09/07/thinking-in-java-v4-2/</id>
     <published>2017-09-07T09:12:47.000Z</published>
-    <updated>2017-09-07T09:14:39.724Z</updated>
+    <updated>2017-09-07T09:16:27.248Z</updated>
     
     <content type="html"><![CDATA[<p><excerpt in="" index="" |="" 首页摘要=""><br>JAVA编程思想第四版第二章<br><a id="more"></a></excerpt></p>
 <the rest="" of="" contents="" |="" 余下全文="">
 
 <h2 id="第二章-一切都是对象"><a href="#第二章-一切都是对象" class="headerlink" title="第二章 一切都是对象"></a>第二章 一切都是对象</h2><ol>
-<li>数据存储的地方：按快慢：寄存器&gt;堆栈&gt;堆&gt;常量存储&gt;非RAM存储<ul>
+<li>数据存储的地方：按快慢：寄存器&gt;堆栈&gt;堆&gt;常量存储&gt;非RAM存储<ol>
 <li>常量存储：存放在程序代码内部</li>
 <li>非RAM存储：存放在程序之外，比如 <em>流对象</em> 和 <em>持久化对象</em></li>
-</ul>
+</ol>
 </li>
-<li>基本类型和非基本类型的区别<br> <input type="hidden" value="Just for something ! You can ignore it."><ul>
+<li>基本类型和非基本类型的区别<br> <input type="hidden" value="Just for something ! You can ignore it."><ol>
 <li>非基本类型使用<code>new</code>关键字来初始化，存储于堆中，操作非基本类型使用的实际上是对象的一个“引用”，而非对象本身。</li>
 <li>基本类型的创建不用<code>new</code>关键字，而是创建一个非引用的“自动”变量，直接存储“值”，存储于堆栈中，比存储于堆中更加高效。另外，java基本类型所占存储空间的大小不随机器硬件架构的变化而变化。</li>
 <li>java中存在基本类型的包装类型，比如int的包装类型为Integer类型，可以使用<code>new Integer(1);</code>或<code>Integer integer = 3;</code>在堆中创建一个非基本类型，来表示对应的基本类型。</li>
-</ul>
+</ol>
 </li>
 <li><p>java中不允许在C和C++里将一个较大作用域的变量“隐藏”起来的做法，以下代码是错误的：</p>
  <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="keyword">int</span> x = <span class="number">12</span>;</div><div class="line">    &#123;</div><div class="line">        <span class="keyword">int</span> x = <span class="number">9</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
