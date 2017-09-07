@@ -92,7 +92,7 @@
     <link href="http://an15m.tk/2017/09/07/thinking-in-java-v4-3/"/>
     <id>http://an15m.tk/2017/09/07/thinking-in-java-v4-3/</id>
     <published>2017-09-07T09:12:50.000Z</published>
-    <updated>2017-09-07T10:35:45.326Z</updated>
+    <updated>2017-09-07T10:37:47.136Z</updated>
     
     <content type="html"><![CDATA[<p><excerpt in="" index="" |="" 首页摘要=""><br>第三章 操作符<br><a id="more"></a></excerpt></p>
 <the rest="" of="" contents="" |="" 余下全文="">
@@ -113,6 +113,7 @@
   <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">后缀：</div><div class="line">    L或l：long</div><div class="line">    F或f：float</div><div class="line">    D或d：double</div><div class="line">前缀：</div><div class="line">    0x或0X：十六进制，十六进制数使用于所有整数数据类型(可以赋值给所有整数类型)</div><div class="line">    0：八进制</div></pre></td></tr></table></figure>
 <p>  在使用十六进制和八进制的时候，可以使用<code>Integer</code>和<code>Long</code>类的静态方法<code>toBinaryString()</code>将结果以二进制形式显示出来。</p>
 </li>
+<li>测试</li>
 </ul>
 <h2 id="按位操作符"><a href="#按位操作符" class="headerlink" title="按位操作符"></a>按位操作符</h2><ul>
 <li><code>&amp;</code>：与；<code>|</code>：或；<code>~</code>：非；<code>^</code>：异或</li>
