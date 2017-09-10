@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://an15m.tk/"/>
-  <updated>2017-09-07T11:07:24.233Z</updated>
+  <updated>2017-09-10T01:56:59.797Z</updated>
   <id>http://an15m.tk/</id>
   
   <author>
@@ -14,6 +14,47 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>linux本地端口映射</title>
+    <link href="http://an15m.tk/2017/09/10/linux%E6%9C%AC%E5%9C%B0%E7%AB%AF%E5%8F%A3%E6%98%A0%E5%B0%84/"/>
+    <id>http://an15m.tk/2017/09/10/linux本地端口映射/</id>
+    <published>2017-09-10T01:54:40.000Z</published>
+    <updated>2017-09-10T01:56:59.797Z</updated>
+    
+    <content type="html"><![CDATA[<p><excerpt in="" index="" |="" 首页摘要=""><br>将linux服务器的一个端口映射到本地的另一个端口<br><a id="more"></a></excerpt></p>
+<the rest="" of="" contents="" |="" 余下全文="">
+
+
+<h2 id="使用iptables建立规则"><a href="#使用iptables建立规则" class="headerlink" title="使用iptables建立规则"></a>使用iptables建立规则</h2><p>例：将3722端口映射到22端口<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ sudo iptables -t nat -I PREROUTING -p tcp --dport 3722 -j REDIRECT --to-ports 22</div><div class="line">$ sudo iptables -t nat -I OUTPUT -p tcp -o lo --dport 3722 -j REDIRECT --to-ports 22</div></pre></td></tr></table></figure></p>
+<h2 id="永久生效"><a href="#永久生效" class="headerlink" title="永久生效"></a>永久生效</h2><ol>
+<li><p>安装iptables-persistent</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install iptables-persistent</div></pre></td></tr></table></figure>
+</li>
+<li><p>然后，可以通过下面的命令来保存或重新加载iptables rules</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo /etc/init.d/iptables-persistent save</div><div class="line">sudo /etc/init.d/iptables-persistent reload</div></pre></td></tr></table></figure>
+</li>
+<li><p>对Ubuntu 16.04 Server上面的两个命令好像不好使，用下面两个命令代替：</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo netfilter-persistent save</div><div class="line">sudo netfilter-persistent reload</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<blockquote>
+<p>如果文章对你有帮助,请去我的博客留个言吧! <a href="http://an15m.tk">我的博客</a></p>
+</blockquote>
+</the>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;excerpt in=&quot;&quot; index=&quot;&quot; |=&quot;&quot; 首页摘要=&quot;&quot;&gt;&lt;br&gt;将linux服务器的一个端口映射到本地的另一个端口&lt;br&gt;
+    
+    </summary>
+    
+      <category term="linux" scheme="http://an15m.tk/categories/linux/"/>
+    
+    
+      <category term="linux" scheme="http://an15m.tk/tags/linux/"/>
+    
+  </entry>
   
   <entry>
     <title>JAVA编程思想第四版第五章</title>
@@ -142,7 +183,7 @@
     <link href="http://an15m.tk/2017/09/07/thinking-in-java-v4-3/"/>
     <id>http://an15m.tk/2017/09/07/thinking-in-java-v4-3/</id>
     <published>2017-09-07T09:12:50.000Z</published>
-    <updated>2017-09-07T10:59:58.882Z</updated>
+    <updated>2017-09-07T11:01:03.081Z</updated>
     
     <content type="html"><![CDATA[<p><excerpt in="" index="" |="" 首页摘要=""><br>第三章 操作符<br><a id="more"></a></excerpt></p>
 <the rest="" of="" contents="" |="" 余下全文="">

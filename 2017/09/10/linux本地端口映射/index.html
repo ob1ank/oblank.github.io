@@ -7,15 +7,20 @@
   
   
   
-  <title>Archives: 2017/8 | an15m</title>
+  <title>linux本地端口映射 | an15m</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="an15m">
-<meta property="og:url" content="http://an15m.tk/archives/2017/08/index.html">
+  <meta name="description" content="将linux服务器的一个端口映射到本地的另一个端口">
+<meta name="keywords" content="linux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="linux本地端口映射">
+<meta property="og:url" content="http://an15m.tk/2017/09/10/linux本地端口映射/index.html">
 <meta property="og:site_name" content="an15m">
+<meta property="og:description" content="将linux服务器的一个端口映射到本地的另一个端口">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-09-10T01:56:59.797Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="an15m">
+<meta name="twitter:title" content="linux本地端口映射">
+<meta name="twitter:description" content="将linux服务器的一个端口映射到本地的另一个端口">
   
   
     <link rel="icon" href="/img/k.ico">
@@ -38,8 +43,8 @@
           fancybox: true,
           animate: true,
           isHome: false,
-          isPost: false,
-          isArchive: true,
+          isPost: true,
+          isArchive: false,
           isTag: false,
           isCategory: false,
           open_in_new: false
@@ -252,97 +257,215 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap">
+      <div class="body-wrap"><article id="post-linux本地端口映射" class="article article-type-post" itemscope itemprop="blogPost">
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a  href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a  href="/2017/08/30/fsat-git/" class="archive-article-date">
-      <time datetime="2017-08-30T06:36:33.000Z" itemprop="datePublished">08-30</time>
+    <div class="article-meta">
+      <a  href="/2017/09/10/linux本地端口映射/" class="article-date">
+      <time datetime="2017-09-10T01:54:40.000Z" itemprop="datePublished">2017-09-10</time>
 </a>
 
-        </div>
-         
+    </div>
   
-    <h1 itemprop="name">
-      <a  class="archive-article-title" href="/2017/08/30/fsat-git/">fsat git</a>
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      linux本地端口映射
     </h1>
   
 
 
-        <div class="article-info info-on-archive">
-          
+      </header>
+      
+      <div class="article-info article-info-post">
+        
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/git/">git</a>
+    <a class="article-category-link" href="/categories/linux/">linux</a>
     </div>
 
 
-          
+        
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li></ul>
     </div>
 
-        </div>
         <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
+      </div>
+      
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a  href="/2017/08/30/git-config/" class="archive-article-date">
-      <time datetime="2017-08-30T02:33:57.000Z" itemprop="datePublished">08-30</time>
-</a>
-
-        </div>
-         
-  
-    <h1 itemprop="name">
-      <a  class="archive-article-title" href="/2017/08/30/git-config/">git config命令</a>
-    </h1>
-  
-
-
-        <div class="article-info info-on-archive">
+    <div class="article-entry" itemprop="articleBody">
+      
           
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/git/">git</a>
+        <p><excerpt in="" index="" |="" 首页摘要=""><br>将linux服务器的一个端口映射到本地的另一个端口<br><a id="more"></a></excerpt></p>
+<the rest="" of="" contents="" |="" 余下全文="">
+
+
+<h2 id="使用iptables建立规则"><a href="#使用iptables建立规则" class="headerlink" title="使用iptables建立规则"></a>使用iptables建立规则</h2><p>例：将3722端口映射到22端口<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ sudo iptables -t nat -I PREROUTING -p tcp --dport 3722 -j REDIRECT --to-ports 22</div><div class="line">$ sudo iptables -t nat -I OUTPUT -p tcp -o lo --dport 3722 -j REDIRECT --to-ports 22</div></pre></td></tr></table></figure></p>
+<h2 id="永久生效"><a href="#永久生效" class="headerlink" title="永久生效"></a>永久生效</h2><ol>
+<li><p>安装iptables-persistent</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install iptables-persistent</div></pre></td></tr></table></figure>
+</li>
+<li><p>然后，可以通过下面的命令来保存或重新加载iptables rules</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo /etc/init.d/iptables-persistent save</div><div class="line">sudo /etc/init.d/iptables-persistent reload</div></pre></td></tr></table></figure>
+</li>
+<li><p>对Ubuntu 16.04 Server上面的两个命令好像不好使，用下面两个命令代替：</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo netfilter-persistent save</div><div class="line">sudo netfilter-persistent reload</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<blockquote>
+<p>如果文章对你有帮助,请去我的博客留个言吧! <a href="http://an15m.tk">我的博客</a></p>
+</blockquote>
+</the>
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a  href="/2017/09/10/linux本地端口映射/">linux本地端口映射</a></p>
+        <p><span>文章作者:</span><a  href="/" title="访问 an15m 的个人博客">an15m</a></p>
+        <p><span>发布时间:</span>2017年09月10日 - 09时54分</p>
+        <p><span>最后更新:</span>2017年09月10日 - 09时56分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2017/09/10/linux本地端口映射/" title="linux本地端口映射">http://an15m.tk/2017/09/10/linux本地端口映射/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://an15m.tk/2017/09/10/linux本地端口映射/　　作者: an15m" title=""></span>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
     </div>
 
 
-          
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
-    </div>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
+<nav id="article-nav">
+  
+  
+    <a  href="/2017/09/07/thinking-in-java-v4-5/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">JAVA编程思想第四版第五章</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+
+  
 </article>
-  
-  
-    </div></section>
-  
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#使用iptables建立规则"><span class="toc-number">1.</span> <span class="toc-text">使用iptables建立规则</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#永久生效"><span class="toc-number">2.</span> <span class="toc-text">永久生效</span></a></li></ol>
+</div>
+<style>
+    .left-col .switch-btn {
+        display: none;
+    }
+    .left-col .switch-area {
+        display: none;
+    }
+</style>
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+            $(".switch-btn, .switch-area").fadeOut(300);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+            $(".switch-btn, .switch-area").fadeIn(500);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+        $(".switch-btn, .switch-area").show();
+    }
+</script>
+
+
+
+
+
+
+    
+        <section class="levere" id="comments">
+  <!-- 来必力City版安装代码 -->
+  <div id="lv-container" data-id="city" data-uid="MTAyMC8zMDQ1OC83MDEy">
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+
+        if (typeof LivereTower === 'function') { return; }
+
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+	</script>
+    <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+  </div>
+  <!-- City版安装代码已完成 -->
+</section>
+
 
     
 
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a  href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a  href="/2017/09/07/thinking-in-java-v4-5/" title="下一篇: JAVA编程思想第四版第五章">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/09/10/linux本地端口映射/">linux本地端口映射</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/07/thinking-in-java-v4-5/">JAVA编程思想第四版第五章</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/07/thinking-in-java-v4-4/">JAVA编程思想第四版第四章</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/07/thinking-in-java-v4-3/">JAVA编程思想第四版第三章</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/07/thinking-in-java-v4-2/">JAVA编程思想第四版第二章</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/07/thinking-in-java-v4-1/">JAVA编程思想第四版第一章</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/30/fsat-git/">fsat git</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/30/git-config/">git config命令</a></li></ul>
+    <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        // $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#toc, .switch-btn, .switch-area").toggle();
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+                $(".switch-btn, .switch-area").fadeToggle(300);
+            }
+        })
+    </script>
+
+
+
+
+    <script>
+        
+    </script>
 
 </div>
       <footer id="footer">
@@ -432,17 +555,6 @@ ga('send', 'pageview');
         };
     })
 </script>
-
-    <button class="hide-labels">TAG 开关</button>
-    <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js">
-    </script>
-    <script>
-        $(document).ready(function() {
-            $("button").click(function() {
-                $(".article-info").toggle(200);
-            });
-        });
-    </script>
 
 <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
 </script>
