@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://an15m.tk/"/>
-  <updated>2017-09-10T02:47:25.485Z</updated>
+  <updated>2017-09-10T02:50:13.875Z</updated>
   <id>http://an15m.tk/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://an15m.tk/2017/09/10/markdown%E8%AF%AD%E6%B3%95/"/>
     <id>http://an15m.tk/2017/09/10/markdown语法/</id>
     <published>2017-09-10T02:06:42.000Z</published>
-    <updated>2017-09-10T02:47:25.485Z</updated>
+    <updated>2017-09-10T02:50:13.875Z</updated>
     
     <content type="html"><![CDATA[<p><excerpt in="" index="" |="" 首页摘要=""><br>markdown语法<br><a id="more"></a></excerpt></p>
 <the rest="" of="" contents="" |="" 余下全文="">
@@ -96,6 +96,10 @@
     
     </summary>
     
+      <category term="markdown" scheme="http://an15m.tk/categories/markdown/"/>
+    
+    
+      <category term="markdown" scheme="http://an15m.tk/tags/markdown/"/>
     
   </entry>
   
