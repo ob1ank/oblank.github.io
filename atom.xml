@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://an15m.tk/"/>
-  <updated>2017-09-10T02:44:01.172Z</updated>
+  <updated>2017-09-10T02:45:17.367Z</updated>
   <id>http://an15m.tk/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://an15m.tk/2017/09/10/markdown%E8%AF%AD%E6%B3%95/"/>
     <id>http://an15m.tk/2017/09/10/markdown语法/</id>
     <published>2017-09-10T02:06:42.000Z</published>
-    <updated>2017-09-10T02:44:01.172Z</updated>
+    <updated>2017-09-10T02:45:17.367Z</updated>
     
     <content type="html"><![CDATA[<p><excerpt in="" index="" |="" 首页摘要=""><br>markdown语法<br><a id="more"></a></excerpt></p>
 <the rest="" of="" contents="" |="" 余下全文="">
@@ -42,7 +42,7 @@
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="bullet">*   </span>A list item with a blockquote:</div><div class="line"></div><div class="line"><span class="code">    &gt; This is a blockquote</span></div><div class="line"><span class="code">    &gt; inside a list item.</span></div></pre></td></tr></table></figure>
 <p>如果放代码块的话，代码块就需要缩进两次</p>
 <h3 id="代码区块"><a href="#代码区块" class="headerlink" title="代码区块"></a>代码区块</h3><p>用缩进4个空格或是1个制表符来实现<br>另外GitHub Flavored Markdown请参看<a href="https://guides.github.com/features/mastering-markdown/#GitHub-flavored-markdown" target="_blank" rel="external">GFM</a></p>
-<h3 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a>分割线</h3><p>一行中用三个 * 或 - 或 _</p>
+<h3 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a>分割线</h3><p>一行中用三个 <code>*</code> 或 <code>-</code> 或 <code>_</code></p>
 <hr>
 <h2 id="区段元素"><a href="#区段元素" class="headerlink" title="区段元素"></a>区段元素</h2><h3 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h3><p>行内式：</p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">This is [<span class="string">an example</span>](<span class="link">http://example.com/ "Title"</span>) inline link.</div><div class="line"></div><div class="line">[<span class="string">This link</span>](<span class="link">http://example.net/</span>) has no title attribute.</div></pre></td></tr></table></figure>
