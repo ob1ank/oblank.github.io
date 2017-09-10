@@ -4,14 +4,34 @@
 
     
   <url>
+    <loc>http://an15m.tk/2017/09/10/%E5%88%97%E5%87%BA%E5%92%8C%E5%88%A0%E9%99%A4iptables/</loc>
+    <lastmod>2017-09-10T02:02:40.079Z</lastmod>
+    <data>
+        <display>
+        <title>列出和删除iptables</title>
+        <pubTime>2017-09-10T01:59:31.000Z</pubTime>
+        
+        <tag>iptables</tag>
+         
+         
+           
+             
+              <breadCrumb title="linux" url="http://an15m.tk/categories/linux/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://an15m.tk/2017/09/10/linux%E6%9C%AC%E5%9C%B0%E7%AB%AF%E5%8F%A3%E6%98%A0%E5%B0%84/</loc>
-    <lastmod>2017-09-10T01:56:59.797Z</lastmod>
+    <lastmod>2017-09-10T02:00:53.485Z</lastmod>
     <data>
         <display>
         <title>linux本地端口映射</title>
         <pubTime>2017-09-10T01:54:40.000Z</pubTime>
         
-        <tag>linux</tag>
+        <tag>iptables</tag>
          
          
            
