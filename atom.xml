@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://an15m.tk/"/>
-  <updated>2017-09-10T02:25:02.878Z</updated>
+  <updated>2017-09-10T02:28:37.376Z</updated>
   <id>http://an15m.tk/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://an15m.tk/2017/09/10/markdown%E8%AF%AD%E6%B3%95/"/>
     <id>http://an15m.tk/2017/09/10/markdown语法/</id>
     <published>2017-09-10T02:06:42.000Z</published>
-    <updated>2017-09-10T02:25:02.878Z</updated>
+    <updated>2017-09-10T02:28:37.376Z</updated>
     
     <content type="html"><![CDATA[<p><excerpt in="" index="" |="" 首页摘要=""><br>markdown语法<br><a id="more"></a></excerpt></p>
 <the rest="" of="" contents="" |="" 余下全文="">
@@ -42,7 +42,8 @@
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="bullet">*   </span>A list item with a blockquote:</div><div class="line"></div><div class="line"><span class="code">    &gt; This is a blockquote</span></div><div class="line"><span class="code">    &gt; inside a list item.</span></div></pre></td></tr></table></figure>
 <p>如果放代码块的话，代码块就需要缩进两次</p>
 <h3 id="代码区块"><a href="#代码区块" class="headerlink" title="代码区块"></a>代码区块</h3><p>用缩进4个空格或是1个制表符来实现<br>注：对Markdown GFM 来说，当然还可以用以下格式（会有语法高亮哦）:</p>
-<p><figure class="highlight markdown"><br>  <table><br>    <tbody><br>      <tr><br>        <td class="gutter"><br>          <pre><br>            <div class="line">1</div><br>            <div class="line">2</div><br>            <div class="line">3</div><br>          </pre><br>        </td><br>        <td class="code"><br>          <pre><br>            <div class="line"><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">            &lt;div class=&quot;line&quot;&gt;java代码块&lt;/div&gt;</div><div class="line">            &lt;div class=&quot;line&quot;&gt;```&lt;/div&gt;&lt;/pre&gt;</div><div class="line">        &lt;/td&gt;</div><div class="line">      &lt;/tr&gt;</div><div class="line">    &lt;/tbody&gt;</div><div class="line">  &lt;/table&gt;</div><div class="line">&lt;/figure&gt;</div><div class="line">注意&lt;code&gt;```&lt;/code&gt;必须顶格</div><div class="line">### 分割线</div><div class="line">一行中用三个 * 或 - 或 _</div><div class="line">____</div><div class="line">## 区段元素</div><div class="line">### 链接</div><div class="line">行内式：</div><div class="line"></div><div class="line">```markdown</div><div class="line">This is [an example](http://example.com/ &quot;Title&quot;) inline link.</div><div class="line"></div><div class="line">[This link](http://example.net/) has no title attribute.</div></pre></td></tr></table></figure></div></pre></td></tr></tbody></table></figure></p>
+<p><pre><br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">java代码块</div></pre></td></tr></table></figure></pre></p>
+<p><br>注意<code><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">### 分割线</div><div class="line">一行中用三个 * 或 - 或 _</div><div class="line">____</div><div class="line">## 区段元素</div><div class="line">### 链接</div><div class="line">行内式：</div><div class="line"></div><div class="line">```markdown</div><div class="line">This is [an example](http://example.com/ &quot;Title&quot;) inline link.</div><div class="line"></div><div class="line">[This link](http://example.net/) has no title attribute.</div></pre></td></tr></table></figure></code></p>
 <p>Title可写可不写<br>如果是同主机资源，可以使用相对路径</p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">See my [<span class="string">About</span>](<span class="link">/about/ "Title"</span>) page for details.</div><div class="line"></div><div class="line">See my [<span class="string">About</span>](<span class="link">/about/</span>) page for details.</div></pre></td></tr></table></figure>
 <p>参考式：</p>
