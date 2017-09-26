@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://an15m.tk/"/>
-  <updated>2017-09-26T04:37:45.208Z</updated>
+  <updated>2017-09-26T04:39:38.838Z</updated>
   <id>http://an15m.tk/</id>
   
   <author>
@@ -20,13 +20,13 @@
     <link href="http://an15m.tk/2017/09/26/Ubuntu%E8%AE%BE%E7%BD%AE%E9%9D%99%E6%80%81IP/"/>
     <id>http://an15m.tk/2017/09/26/Ubuntu设置静态IP/</id>
     <published>2017-09-26T04:27:56.000Z</published>
-    <updated>2017-09-26T04:37:45.208Z</updated>
+    <updated>2017-09-26T04:39:38.838Z</updated>
     
     <content type="html"><![CDATA[<p><excerpt in="" index="" |="" 首页摘要=""><br>Ubuntu设置静态IP并配置永久DNS<br><a id="more"></a></excerpt></p>
 <the rest="" of="" contents="" |="" 余下全文="">
 
 <h2 id="设置静态IP"><a href="#设置静态IP" class="headerlink" title="设置静态IP"></a>设置静态IP</h2><p>使用<code>ifconig</code>命令查看网卡，例如<code>eth0</code><br>打开<code>/etc/network/interfaces</code>修改内容如下：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">auto lo</div><div class="line">iface lo inet loopback</div><div class="line"></div><div class="line">auto eth0 <span class="comment">#对应ifconfig的结果</span></div><div class="line">iface eth0 inet static</div><div class="line">address 192.168.1.*** </div><div class="line">netmask 255.255.255.0</div><div class="line">gateway 192.168.1.1   <span class="comment">#根据自己实际情况</span></div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">auto lo</div><div class="line">iface lo inet loopback  </div><div class="line"></div><div class="line">auto eth0 <span class="comment">#对应ifconfig的结果</span></div><div class="line">iface eth0 inet static</div><div class="line">address 192.168.1.*** </div><div class="line">netmask 255.255.255.0</div><div class="line">gateway 192.168.1.1   <span class="comment">#根据自己实际情况</span></div></pre></td></tr></table></figure>
 <h2 id="设置永久dns"><a href="#设置永久dns" class="headerlink" title="设置永久dns"></a>设置永久dns</h2><p>在<code>/etc/resolv.conf</code>中添加两行：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">nameserver 114.114.114.114</div><div class="line">nameserver 8.8.8.8</div></pre></td></tr></table></figure>
 <p>在<code>/etc/resolvconf/resolv.conf.d/bash</code>中也添加两行：</p>
