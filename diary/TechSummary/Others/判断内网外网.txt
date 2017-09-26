@@ -1,0 +1,3 @@
+4，登录万网http://www.net.cn/static/customercare/yourip.asp 查看获得的IP地址
+
+（如万网获取IP是二个，则是IP经运营商转换的内网环境）
