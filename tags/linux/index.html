@@ -4,23 +4,20 @@
   <meta charset="utf-8">
   <meta name="baidu-site-verification" content="L6Lm9d5Crl"/>
   
+   
+    <meta name="keywords" content="linux" />
   
   
   
-  <title>JAVA编程思想第四版第四章 | an15m</title>
+  <title>Tag: linux | an15m</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="第四章  执行控制流程">
-<meta name="keywords" content="java">
-<meta property="og:type" content="article">
-<meta property="og:title" content="JAVA编程思想第四版第四章">
-<meta property="og:url" content="http://an15m.tk/2017/09/07/thinking-in-java-v4-4/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="an15m">
+<meta property="og:url" content="http://an15m.tk/tags/linux/index.html">
 <meta property="og:site_name" content="an15m">
-<meta property="og:description" content="第四章  执行控制流程">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-07T11:04:03.695Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JAVA编程思想第四版第四章">
-<meta name="twitter:description" content="第四章  执行控制流程">
+<meta name="twitter:title" content="an15m">
   
   
     <link rel="icon" href="/img/k.ico">
@@ -43,9 +40,9 @@
           fancybox: true,
           animate: true,
           isHome: false,
-          isPost: true,
+          isPost: false,
           isArchive: false,
-          isTag: false,
+          isTag: true,
           isCategory: false,
           open_in_new: false
       }
@@ -257,222 +254,60 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-thinking-in-java-v4-4" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap">
   
-    <div class="article-meta">
-      <a  href="/2017/09/07/thinking-in-java-v4-4/" class="article-date">
-      <time datetime="2017-09-07T09:12:56.000Z" itemprop="datePublished">2017-09-07</time>
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a  href="/archives/2017" class="archive-year">2017</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+          <div class="article-meta">
+              <a  href="/2017/09/26/linux-server使用U盘/" class="archive-article-date">
+      <time datetime="2017-09-26T04:45:40.000Z" itemprop="datePublished">09-26</time>
 </a>
 
-    </div>
+        </div>
+         
   
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      JAVA编程思想第四版第四章
+    <h1 itemprop="name">
+      <a  class="archive-article-title" href="/2017/09/26/linux-server使用U盘/">linux server使用U盘</a>
     </h1>
   
 
 
-      </header>
-      
-      <div class="article-info article-info-post">
-        
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/JAVA编程思想v4/">JAVA编程思想v4</a>
-    </div>
-
-
-        
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
-    </div>
-
-        <div class="clearfix"></div>
-      </div>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
+        <div class="article-info info-on-archive">
           
-        <p><excerpt in="" index="" |="" 首页摘要=""><br>第四章  执行控制流程<br><a id="more"></a></excerpt></p>
-<the rest="" of="" contents="" |="" 余下全文="">
-
-<h2 id="Foreach语法"><a href="#Foreach语法" class="headerlink" title="Foreach语法"></a>Foreach语法</h2><p><code>Foreach</code>可以用于任何<code>Iterable</code>对象。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">float</span>[] f = <span class="keyword">new</span> <span class="keyword">float</span>[]&#123;<span class="number">1.1f</span>,<span class="number">2.1f</span>,<span class="number">3.2f</span>&#125;;</div><div class="line"><span class="keyword">for</span> (<span class="keyword">float</span> x : f) &#123;</div><div class="line">    System.out.println(x);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h2 id="臭名昭著的goto"><a href="#臭名昭著的goto" class="headerlink" title="臭名昭著的goto"></a>臭名昭著的goto</h2><ol>
-<li>java不支持<code>goto</code>语句，但仍可以进行类似的跳转，但比起典型的<code>goto</code>有了很多限制。另外，<code>goto</code>仍然是java中的一个保留字。</li>
-<li><p>标签的使用：标签是后面跟有冒号的标识符，就像<code>label1:</code>这样。java中标签要写在迭代语句之前，中间最好不要有任何其他语句。假如有以下代码：</p>
- <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">label1:</div><div class="line">outer-iteration&#123;</div><div class="line">    inter-iteration&#123;</div><div class="line">        <span class="comment">//...</span></div><div class="line">        <span class="keyword">break</span>; <span class="comment">//(1)</span></div><div class="line">        <span class="comment">//...</span></div><div class="line">        <span class="keyword">continue</span>; <span class="comment">//(2)</span></div><div class="line">        <span class="comment">//...</span></div><div class="line">        <span class="keyword">continue</span> label1; <span class="comment">//(3)</span></div><div class="line">        <span class="comment">//...</span></div><div class="line">        <span class="keyword">break</span> label1; <span class="comment">//(4)</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p> 在(1)中，<code>break</code>中断内部迭代，回到外部迭代。<br> 在(2)中，<code>continue</code>是执行点移回内部迭代的起始处。<br> 在(3)中，<code>continue label1</code>同时中断内部迭代以及外部迭代，直接转到<code>label1</code>处；随后，它实际上是继续迭代过程，但却从外部迭代开始。<br> 在(4)中，<code>break label1</code>也会中断所有迭代，并回到<code>label1</code>处，但并不重新进入迭代，它实际上是完全终止了两个迭代。</p>
-</li>
-</ol>
-<h2 id="switch"><a href="#switch" class="headerlink" title="switch"></a>switch</h2><p>switch中的选择因子必须是<code>int</code>或<code>char</code>那样的整数值(java7以后也可以使用字符串)。</p>
-<blockquote>
-<p>如果文章对你有帮助,请去我的博客留个言吧! <a href="http://an15m.tk">我的博客</a></p>
-</blockquote>
-</the>
-      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/linux/">linux</a>
     </div>
-    
+
+
+          
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li></ul>
+    </div>
+
+        </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
-  
-    
-    <div class="copyright">
-        <p><span>本文标题:</span><a  href="/2017/09/07/thinking-in-java-v4-4/">JAVA编程思想第四版第四章</a></p>
-        <p><span>文章作者:</span><a  href="/" title="访问 an15m 的个人博客">an15m</a></p>
-        <p><span>发布时间:</span>2017年09月07日 - 17时12分</p>
-        <p><span>最后更新:</span>2017年09月07日 - 19时04分</p>
-        <p>
-            <span>原始链接:</span><a class="post-url" href="/2017/09/07/thinking-in-java-v4-4/" title="JAVA编程思想第四版第四章">http://an15m.tk/2017/09/07/thinking-in-java-v4-4/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://an15m.tk/2017/09/07/thinking-in-java-v4-4/　　作者: an15m" title=""></span>
-        </p>
-        <p>
-            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
-        </p>
-    </div>
-
-
-
-<nav id="article-nav">
-  
-    <a  href="/2017/09/07/thinking-in-java-v4-5/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          JAVA编程思想第四版第五章
-        
-      </div>
-    </a>
-  
-  
-    <a  href="/2017/09/07/thinking-in-java-v4-3/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">JAVA编程思想第四版第三章</div>
-      <strong class="article-nav-caption">></strong>
-    </a>
-  
-</nav>
-
-
-  
 </article>
-
-    <div id="toc" class="toc-article">
-    <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Foreach语法"><span class="toc-number">1.</span> <span class="toc-text">Foreach语法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#臭名昭著的goto"><span class="toc-number">2.</span> <span class="toc-text">臭名昭著的goto</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#switch"><span class="toc-number">3.</span> <span class="toc-text">switch</span></a></li></ol>
-</div>
-<style>
-    .left-col .switch-btn {
-        display: none;
-    }
-    .left-col .switch-area {
-        display: none;
-    }
-</style>
-<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
-<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
-<script>
-    var valueHide = "隐藏目录";
-    var valueShow = "显示目录";
-    if ($(".left-col").is(":hidden")) {
-        $("#tocButton").attr("value", valueShow);
-    }
-    $("#tocButton").click(function() {
-        if ($("#toc").is(":hidden")) {
-            $("#tocButton").attr("value", valueHide);
-            $("#toc").slideDown(320);
-            $(".switch-btn, .switch-area").fadeOut(300);
-        }
-        else {
-            $("#tocButton").attr("value", valueShow);
-            $("#toc").slideUp(350);
-            $(".switch-btn, .switch-area").fadeIn(500);
-        }
-    })
-    if ($(".toc").length < 1) {
-        $("#toc, #tocButton").hide();
-        $(".switch-btn, .switch-area").show();
-    }
-</script>
-
-
-
-
-
-
-    
-        <section class="levere" id="comments">
-  <!-- 来必力City版安装代码 -->
-  <div id="lv-container" data-id="city" data-uid="MTAyMC8zMDQ1OC83MDEy">
-    <script type="text/javascript">
-      (function(d, s) {
-        var j, e = d.getElementsByTagName(s)[0];
-
-        if (typeof LivereTower === 'function') { return; }
-
-        j = d.createElement(s);
-        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-        j.async = true;
-
-        e.parentNode.insertBefore(j, e);
-      })(document, 'script');
-	</script>
-    <noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
-  </div>
-  <!-- City版安装代码已完成 -->
-</section>
-
+  
+  
+    </div></section>
+  
 
     
 
-
-
-    <div class="scroll" id="post-nav-button">
-        
-            <a  href="/2017/09/07/thinking-in-java-v4-5/" title="上一篇: JAVA编程思想第四版第五章">
-                <i class="fa fa-angle-left"></i>
-            </a>
-        
-        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
-        
-            <a  href="/2017/09/07/thinking-in-java-v4-3/" title="下一篇: JAVA编程思想第四版第三章">
-                <i class="fa fa-angle-right"></i>
-            </a>
-        
-    </div>
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/09/26/linux-server使用U盘/">linux server使用U盘</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/26/Ubuntu设置静态IP/">Ubuntu设置静态IP</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/10/markdown语法/">markdown语法</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/10/列出和删除iptables/">列出和删除iptables</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/10/linux本地端口映射/">linux本地端口映射</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/07/thinking-in-java-v4-5/">JAVA编程思想第四版第五章</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/07/thinking-in-java-v4-4/">JAVA编程思想第四版第四章</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/07/thinking-in-java-v4-3/">JAVA编程思想第四版第三章</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/07/thinking-in-java-v4-2/">JAVA编程思想第四版第二章</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/09/07/thinking-in-java-v4-1/">JAVA编程思想第四版第一章</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/30/fsat-git/">fsat git</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/08/30/git-config/">git config命令</a></li></ul>
-    <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
-    <script>
-        $(".post-list").addClass("toc-article");
-        // $(".post-list-item a").attr("target","_blank");
-        $("#post-nav-button > a:nth-child(2)").click(function() {
-            $(".fa-bars, .fa-times").toggle();
-            $(".post-list").toggle(300);
-            if ($(".toc").length > 0) {
-                $("#toc, #tocButton").toggle(200, function() {
-                    if ($(".switch-area").is(":visible")) {
-                        $("#toc, .switch-btn, .switch-area").toggle();
-                        $("#tocButton").attr("value", valueHide);
-                        }
-                    })
-            }
-            else {
-                $(".switch-btn, .switch-area").fadeToggle(300);
-            }
-        })
-    </script>
-
-
-
-
-    <script>
-        
-    </script>
 
 </div>
       <footer id="footer">
@@ -562,6 +397,17 @@ ga('send', 'pageview');
         };
     })
 </script>
+
+    <button class="hide-labels">TAG 开关</button>
+    <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js">
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("button").click(function() {
+                $(".article-info").toggle(200);
+            });
+        });
+    </script>
 
 <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
 </script>

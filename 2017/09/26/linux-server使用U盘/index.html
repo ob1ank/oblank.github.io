@@ -7,20 +7,20 @@
   
   
   
-  <title>JAVA编程思想第四版第四章 | an15m</title>
+  <title>linux server使用U盘 | an15m</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="第四章  执行控制流程">
-<meta name="keywords" content="java">
+  <meta name="description" content="linux server中挂载、卸载U盘">
+<meta name="keywords" content="linux">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JAVA编程思想第四版第四章">
-<meta property="og:url" content="http://an15m.tk/2017/09/07/thinking-in-java-v4-4/index.html">
+<meta property="og:title" content="linux server使用U盘">
+<meta property="og:url" content="http://an15m.tk/2017/09/26/linux-server使用U盘/index.html">
 <meta property="og:site_name" content="an15m">
-<meta property="og:description" content="第四章  执行控制流程">
+<meta property="og:description" content="linux server中挂载、卸载U盘">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-07T11:04:03.695Z">
+<meta property="og:updated_time" content="2017-09-26T04:49:36.668Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JAVA编程思想第四版第四章">
-<meta name="twitter:description" content="第四章  执行控制流程">
+<meta name="twitter:title" content="linux server使用U盘">
+<meta name="twitter:description" content="linux server中挂载、卸载U盘">
   
   
     <link rel="icon" href="/img/k.ico">
@@ -257,11 +257,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-thinking-in-java-v4-4" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-linux-server使用U盘" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2017/09/07/thinking-in-java-v4-4/" class="article-date">
-      <time datetime="2017-09-07T09:12:56.000Z" itemprop="datePublished">2017-09-07</time>
+      <a  href="/2017/09/26/linux-server使用U盘/" class="article-date">
+      <time datetime="2017-09-26T04:45:40.000Z" itemprop="datePublished">2017-09-26</time>
 </a>
 
     </div>
@@ -275,7 +275,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      JAVA编程思想第四版第四章
+      linux server使用U盘
     </h1>
   
 
@@ -285,13 +285,13 @@
       <div class="article-info article-info-post">
         
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/JAVA编程思想v4/">JAVA编程思想v4</a>
+    <a class="article-category-link" href="/categories/linux/">linux</a>
     </div>
 
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -301,18 +301,11 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p><excerpt in="" index="" |="" 首页摘要=""><br>第四章  执行控制流程<br><a id="more"></a></excerpt></p>
+        <p><excerpt in="" index="" |="" 首页摘要=""><br>linux server中挂载、卸载U盘<br><a id="more"></a></excerpt></p>
 <the rest="" of="" contents="" |="" 余下全文="">
 
-<h2 id="Foreach语法"><a href="#Foreach语法" class="headerlink" title="Foreach语法"></a>Foreach语法</h2><p><code>Foreach</code>可以用于任何<code>Iterable</code>对象。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">float</span>[] f = <span class="keyword">new</span> <span class="keyword">float</span>[]&#123;<span class="number">1.1f</span>,<span class="number">2.1f</span>,<span class="number">3.2f</span>&#125;;</div><div class="line"><span class="keyword">for</span> (<span class="keyword">float</span> x : f) &#123;</div><div class="line">    System.out.println(x);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h2 id="臭名昭著的goto"><a href="#臭名昭著的goto" class="headerlink" title="臭名昭著的goto"></a>臭名昭著的goto</h2><ol>
-<li>java不支持<code>goto</code>语句，但仍可以进行类似的跳转，但比起典型的<code>goto</code>有了很多限制。另外，<code>goto</code>仍然是java中的一个保留字。</li>
-<li><p>标签的使用：标签是后面跟有冒号的标识符，就像<code>label1:</code>这样。java中标签要写在迭代语句之前，中间最好不要有任何其他语句。假如有以下代码：</p>
- <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">label1:</div><div class="line">outer-iteration&#123;</div><div class="line">    inter-iteration&#123;</div><div class="line">        <span class="comment">//...</span></div><div class="line">        <span class="keyword">break</span>; <span class="comment">//(1)</span></div><div class="line">        <span class="comment">//...</span></div><div class="line">        <span class="keyword">continue</span>; <span class="comment">//(2)</span></div><div class="line">        <span class="comment">//...</span></div><div class="line">        <span class="keyword">continue</span> label1; <span class="comment">//(3)</span></div><div class="line">        <span class="comment">//...</span></div><div class="line">        <span class="keyword">break</span> label1; <span class="comment">//(4)</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p> 在(1)中，<code>break</code>中断内部迭代，回到外部迭代。<br> 在(2)中，<code>continue</code>是执行点移回内部迭代的起始处。<br> 在(3)中，<code>continue label1</code>同时中断内部迭代以及外部迭代，直接转到<code>label1</code>处；随后，它实际上是继续迭代过程，但却从外部迭代开始。<br> 在(4)中，<code>break label1</code>也会中断所有迭代，并回到<code>label1</code>处，但并不重新进入迭代，它实际上是完全终止了两个迭代。</p>
-</li>
-</ol>
-<h2 id="switch"><a href="#switch" class="headerlink" title="switch"></a>switch</h2><p>switch中的选择因子必须是<code>int</code>或<code>char</code>那样的整数值(java7以后也可以使用字符串)。</p>
+<h2 id="挂载"><a href="#挂载" class="headerlink" title="挂载"></a>挂载</h2><p>在插入U盘前先进到<code>/dev</code>目录下面<code>ls</code>一下<br>插入U盘以后再<code>ls</code>一下，查看目录下面多了什么，一般是<code>sdb sdb4 sdc sdc4...</code><br>使用<code>sudo mount /dev/sdb4  /mnt/</code>进行挂载，之后进入<code>/mnt</code>目录就是U盘的目录</p>
+<h2 id="卸载"><a href="#卸载" class="headerlink" title="卸载"></a>卸载</h2><p><code>sudo unmount /dev/sdb4</code>然后拔掉U盘即可</p>
 <blockquote>
 <p>如果文章对你有帮助,请去我的博客留个言吧! <a href="http://an15m.tk">我的博客</a></p>
 </blockquote>
@@ -324,13 +317,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a  href="/2017/09/07/thinking-in-java-v4-4/">JAVA编程思想第四版第四章</a></p>
+        <p><span>本文标题:</span><a  href="/2017/09/26/linux-server使用U盘/">linux server使用U盘</a></p>
         <p><span>文章作者:</span><a  href="/" title="访问 an15m 的个人博客">an15m</a></p>
-        <p><span>发布时间:</span>2017年09月07日 - 17时12分</p>
-        <p><span>最后更新:</span>2017年09月07日 - 19时04分</p>
+        <p><span>发布时间:</span>2017年09月26日 - 12时45分</p>
+        <p><span>最后更新:</span>2017年09月26日 - 12时49分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2017/09/07/thinking-in-java-v4-4/" title="JAVA编程思想第四版第四章">http://an15m.tk/2017/09/07/thinking-in-java-v4-4/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://an15m.tk/2017/09/07/thinking-in-java-v4-4/　　作者: an15m" title=""></span>
+            <span>原始链接:</span><a class="post-url" href="/2017/09/26/linux-server使用U盘/" title="linux server使用U盘">http://an15m.tk/2017/09/26/linux-server使用U盘/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://an15m.tk/2017/09/26/linux-server使用U盘/　　作者: an15m" title=""></span>
         </p>
         <p>
             <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
@@ -341,18 +334,9 @@
 
 <nav id="article-nav">
   
-    <a  href="/2017/09/07/thinking-in-java-v4-5/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          JAVA编程思想第四版第五章
-        
-      </div>
-    </a>
   
-  
-    <a  href="/2017/09/07/thinking-in-java-v4-3/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">JAVA编程思想第四版第三章</div>
+    <a  href="/2017/09/26/Ubuntu设置静态IP/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Ubuntu设置静态IP</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -364,7 +348,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Foreach语法"><span class="toc-number">1.</span> <span class="toc-text">Foreach语法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#臭名昭著的goto"><span class="toc-number">2.</span> <span class="toc-text">臭名昭著的goto</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#switch"><span class="toc-number">3.</span> <span class="toc-text">switch</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#挂载"><span class="toc-number">1.</span> <span class="toc-text">挂载</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#卸载"><span class="toc-number">2.</span> <span class="toc-text">卸载</span></a></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
@@ -434,13 +418,11 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a  href="/2017/09/07/thinking-in-java-v4-5/" title="上一篇: JAVA编程思想第四版第五章">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a  href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a  href="/2017/09/07/thinking-in-java-v4-3/" title="下一篇: JAVA编程思想第四版第三章">
+            <a  href="/2017/09/26/Ubuntu设置静态IP/" title="下一篇: Ubuntu设置静态IP">
                 <i class="fa fa-angle-right"></i>
             </a>
         
