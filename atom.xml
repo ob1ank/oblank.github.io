@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://an15m.tk/"/>
-  <updated>2017-09-26T04:39:38.838Z</updated>
+  <updated>2017-09-26T04:40:18.648Z</updated>
   <id>http://an15m.tk/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://an15m.tk/2017/09/26/Ubuntu%E8%AE%BE%E7%BD%AE%E9%9D%99%E6%80%81IP/"/>
     <id>http://an15m.tk/2017/09/26/Ubuntu设置静态IP/</id>
     <published>2017-09-26T04:27:56.000Z</published>
-    <updated>2017-09-26T04:39:38.838Z</updated>
+    <updated>2017-09-26T04:40:18.648Z</updated>
     
     <content type="html"><![CDATA[<p><excerpt in="" index="" |="" 首页摘要=""><br>Ubuntu设置静态IP并配置永久DNS<br><a id="more"></a></excerpt></p>
 <the rest="" of="" contents="" |="" 余下全文="">
@@ -33,7 +33,7 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">nameserver 114.114.114.114</div><div class="line">nameserver 8.8.8.8</div></pre></td></tr></table></figure>
 <h2 id="重启网络"><a href="#重启网络" class="headerlink" title="重启网络"></a>重启网络</h2><p>以下命令可选：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo /etc/init.d/networking restart</div><div class="line">sudo service networking restart</div><div class="line">sudo ifdown eth0; sudo ifup eth0</div></pre></td></tr></table></figure>
-<p>如果上面的命令都失败的话，就只能重启了</p>
+<p>如果上面的命令都失败的话，就只能重启系统了</p>
 <blockquote>
 <p>如果文章对你有帮助,请去我的博客留个言吧! <a href="http://an15m.tk">我的博客</a></p>
 </blockquote>
