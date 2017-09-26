@@ -1,8 +1,0 @@
-<ul>
-<li>下载privoxy</li>
-<li>配置privoxy，配置文件/etc/privoxy/config，找到5. FORWARDING 在下面加入一行<code>forward-socks5 / 127.0.0.1:1080 .</code>具体是什么意思里面有介绍。然后重启privoxy就行了。</li>
-<li>在<code>~/.bashrc</code>增加下面两行，可以使整个终端都使用代理模式：<pre><code class="bash"><span class="built_in">export</span> http_proxy=http://127.0.0.1:8118
-<span class="built_in">export</span> https_proxy=http://127.0.0.1:8118
-</code></pre>
-</li>
-</ul>
