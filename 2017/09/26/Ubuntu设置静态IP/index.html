@@ -17,7 +17,7 @@
 <meta property="og:site_name" content="an15m">
 <meta property="og:description" content="Ubuntu设置静态IP并配置永久DNS">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-26T04:40:18.648Z">
+<meta property="og:updated_time" content="2017-09-26T04:41:52.336Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ubuntu设置静态IP">
 <meta name="twitter:description" content="Ubuntu设置静态IP并配置永久DNS">
@@ -305,7 +305,7 @@
 <the rest="" of="" contents="" |="" 余下全文="">
 
 <h2 id="设置静态IP"><a href="#设置静态IP" class="headerlink" title="设置静态IP"></a>设置静态IP</h2><p>使用<code>ifconig</code>命令查看网卡，例如<code>eth0</code><br>打开<code>/etc/network/interfaces</code>修改内容如下：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">auto lo</div><div class="line">iface lo inet loopback  </div><div class="line"></div><div class="line">auto eth0 <span class="comment">#对应ifconfig的结果</span></div><div class="line">iface eth0 inet static</div><div class="line">address 192.168.1.*** </div><div class="line">netmask 255.255.255.0</div><div class="line">gateway 192.168.1.1   <span class="comment">#根据自己实际情况</span></div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">auto lo</div><div class="line">iface lo inet loopback  </div><div class="line"> </div><div class="line">auto eth0 <span class="comment">#对应ifconfig的结果</span></div><div class="line">iface eth0 inet static</div><div class="line">address 192.168.1.*** </div><div class="line">netmask 255.255.255.0</div><div class="line">gateway 192.168.1.1   <span class="comment">#根据自己实际情况</span></div></pre></td></tr></table></figure>
 <h2 id="设置永久dns"><a href="#设置永久dns" class="headerlink" title="设置永久dns"></a>设置永久dns</h2><p>在<code>/etc/resolv.conf</code>中添加两行：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">nameserver 114.114.114.114</div><div class="line">nameserver 8.8.8.8</div></pre></td></tr></table></figure>
 <p>在<code>/etc/resolvconf/resolv.conf.d/bash</code>中也添加两行：</p>
@@ -327,7 +327,7 @@
         <p><span>本文标题:</span><a  href="/2017/09/26/Ubuntu设置静态IP/">Ubuntu设置静态IP</a></p>
         <p><span>文章作者:</span><a  href="/" title="访问 an15m 的个人博客">an15m</a></p>
         <p><span>发布时间:</span>2017年09月26日 - 12时27分</p>
-        <p><span>最后更新:</span>2017年09月26日 - 12时40分</p>
+        <p><span>最后更新:</span>2017年09月26日 - 12时41分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2017/09/26/Ubuntu设置静态IP/" title="Ubuntu设置静态IP">http://an15m.tk/2017/09/26/Ubuntu设置静态IP/</a>
             <span class="copy-path" data-clipboard-text="原文: http://an15m.tk/2017/09/26/Ubuntu设置静态IP/　　作者: an15m" title=""></span>
