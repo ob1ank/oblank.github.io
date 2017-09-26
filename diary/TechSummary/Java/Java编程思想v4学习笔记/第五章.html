@@ -1,0 +1,85 @@
+<h3 id="第五章-初始化与清理"><a href="#第五章-初始化与清理" class="headerlink" title="第五章 初始化与清理"></a>第五章 初始化与清理</h3><h4 id="用构造器确保初始化"><a href="#用构造器确保初始化" class="headerlink" title="用构造器确保初始化"></a>用构造器确保初始化</h4><ul>
+<li>构造器必须与类同名，并且没有返回值，这与返回值为空(void)不同。</li>
+<li>在java中，“创建”和“初始化”是捆绑在一起的，两者不能分离。<input type="hidden" value="Just for something ! You can ignore it.">
+
+</li>
+</ul>
+<h4 id="方法重载"><a href="#方法重载" class="headerlink" title="方法重载"></a>方法重载</h4><ul>
+<li>参数顺序的不同，也可以区别两个方法。</li>
+</ul>
+<h4 id="this关键字"><a href="#this关键字" class="headerlink" title="this关键字"></a>this关键字</h4><ul>
+<li><code>this</code>关键字的含义：调用这个方法的对象的引用。</li>
+<li>在一个类中，调用类中的某个方法，需要在前面加<code>this</code>关键字，但是在方法内部调用同一个类中的另一个方法，不需要写<code>this</code>。也就是说只有在类主体中调用类中的方法，才需要用到<code>this</code>关键字。</li>
+</ul>
+<h4 id="清理：最终处理和垃圾回收"><a href="#清理：最终处理和垃圾回收" class="headerlink" title="清理：最终处理和垃圾回收"></a>清理：最终处理和垃圾回收</h4><ul>
+<li>java的垃圾回收器只能释放由<code>new</code>分配的内存。</li>
+<li>对象可能不被回收：如果java虚拟机(JVM)并未面临内存耗尽的情形，它是不会浪费实践去执行垃圾回收以回复内存的。</li>
+<li>java允许在类中定义个<code>finalize()</code>方法，当垃圾回收器将要释放无用对象的内存时，先调用该对象的<code>finalize()</code>方法。如果在程序终止之前垃圾回收器始终没有执行垃圾回收操作，那么垃圾回收器将始终不会调用无用对象的<code>finalize()</code>方法。但是，很重要，垃圾回收什么时候发生，会不会发生，没有人可以预知，就算是使用了<code>System.gc()</code>或<code>Runtime.gc()</code>方法，垃圾回收也不一定会发生。所以，慎用！</li>
+</ul>
+<h4 id="初始化顺序"><a href="#初始化顺序" class="headerlink" title="初始化顺序"></a>初始化顺序</h4><ul>
+<li>在类的内部，变量定义的先后顺序决定了初始化的顺序。即使变量定义散步于方法定义之间，他们仍旧会在任何方法(包括构造器)被调用之前就得到初始化。</li>
+<li>静态初始化只有在必要时刻才初始化。</li>
+<li>初始化的顺序是先静态对象(如果它们尚未初始化)，然后是“非静态”对象。</li>
+<li>构造器可以看成是静态方法。</li>
+<li>显式的静态初始化：通过“静态块”，例如：<pre><code class="java"><span class="keyword">static</span> <span class="keyword">int</span> i;
+<span class="keyword">static</span> <span class="keyword">int</span> j;
+<span class="keyword">static</span> {
+    i = <span class="number">1</span>;
+    j = <span class="number">2</span>;
+}
+</code></pre>
+同样的，显式的静态初始化代码，也只有在必须的时候才会执行。</li>
+</ul>
+<h4 id="非静态实例初始化"><a href="#非静态实例初始化" class="headerlink" title="非静态实例初始化"></a>非静态实例初始化</h4><p>java中也有被称为实例初始化的类似语法，用来初始化每一个对象的非静态变量。例如：</p>
+<pre><code class="java"><span class="function"><span class="keyword">public</span> class <span class="title">Init</span><span class="params">()</span></span>{
+    <span class="keyword">int</span> i;
+    <span class="keyword">int</span> j;
+    {
+        i = <span class="number">1</span>;
+        j = <span class="number">2</span>;
+    }
+}
+</code></pre>
+<h4 id="数组初始化"><a href="#数组初始化" class="headerlink" title="数组初始化"></a>数组初始化</h4><ul>
+<li><code>int[] a = {1,2,3}</code>，这种数组初始化方式等价于使用<code>new</code>。</li>
+<li>数组之间赋值，例如：<pre><code class="java"><span class="keyword">int</span>[] a1 = {<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>};
+<span class="keyword">int</span>[] a2 = a1;
+</code></pre>
+真正复制的其实是一个引用，也就是说，当改变<code>a2</code>时，<code>a1</code>也会跟着变。</li>
+<li>基本类型的数组在创建后会被自动初始化为默认值。</li>
+<li>非基本类型的数组必须手动初始化。</li>
+<li>可变参数列表，例如：<pre><code class="java"><span class="function"><span class="keyword">void</span> <span class="title">f</span><span class="params">(<span class="keyword">int</span> a, String... b)</span></span>{
+    <span class="comment">//codes...</span>
+}
+</code></pre>
+上例中，可以传入0 ~ N个字符串。另外，可变参数必须方法参数列表的最后。</li>
+</ul>
+<h4 id="枚举类型enum"><a href="#枚举类型enum" class="headerlink" title="枚举类型enum"></a>枚举类型enum</h4><ul>
+<li>枚举类型的实例是常量，因此按照命名习惯它们都用大写字母表示(如果一个名字中有多个单词，用下划线将它们隔开)。例如：<pre><code class="java"><span class="keyword">public</span> <span class="keyword">enum</span> Directions{
+    EAST , WEST , SOUTH , NORTH , NORTH_EAST , SOUTH_WEST
+}
+</code></pre>
+</li>
+<li>为了使用<code>enum</code>，需要创建一个该类型的引用，并将其赋值给某个实例：<pre><code class="java">Directions east = Directions.EAST;
+System.out.println(east);
+</code></pre>
+</li>
+<li>在你创建<code>enum</code>时，编译器会自动添加一些有用的特性。例如，自动创建<code>toString()</code>方法来转换成字符串，<code>ordinal()</code>方法来表示某个特定<code>enum</code>常量的声明顺序、<code>static values()</code>方法用来按照<code>enum</code>常量的声明顺序，产生由这些常量值构成的数组：<pre><code class="java"><span class="keyword">for</span>(Directions d : Directions.values()){
+  System.out.println(d + <span class="string">", ordinal "</span> + d.ordinal());
+}
+</code></pre>
+</li>
+<li><code>enum</code>是一个类，并且拥有自己的方法。</li>
+<li><code>enum</code>与<code>switch</code>的完美配合：<pre><code class="java">Directions direction;
+<span class="keyword">switch</span>(direction){
+    <span class="keyword">case</span> EAST: System.out.println(<span class="string">"The direction of east."</span>);<span class="keyword">break</span>;
+    <span class="keyword">case</span> WEST: System.out.println(<span class="string">"The direction of west."</span>);<span class="keyword">break</span>;
+    <span class="keyword">case</span> NORTH: System.out.println(<span class="string">"The direction of north."</span>);<span class="keyword">break</span>;
+    <span class="keyword">case</span> SOUTH: System.out.println(<span class="string">"The direction of south."</span>);<span class="keyword">break</span>;
+    <span class="keyword">case</span> NORTH_EAST: System.out.println(<span class="string">"The direction of north-east."</span>);<span class="keyword">break</span>;
+    <span class="keyword">case</span> SOUTH_WEST: System.out.println(<span class="string">"The direction of south-west."</span>);<span class="keyword">break</span>;
+    <span class="keyword">default</span>: System.out.println(<span class="string">"Other directions."</span>);
+}
+</code></pre>
+其实<code>default</code>不是必须的，因为你知道有多少种可能性，不可能有未知的可能性。</li>
+</ul>
