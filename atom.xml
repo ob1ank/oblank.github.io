@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://an15m.tk/"/>
-  <updated>2017-09-26T04:49:36.668Z</updated>
+  <updated>2017-09-26T04:57:07.237Z</updated>
   <id>http://an15m.tk/</id>
   
   <author>
@@ -14,6 +14,39 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>linux添加用户</title>
+    <link href="http://an15m.tk/2017/09/26/linux%E6%B7%BB%E5%8A%A0%E7%94%A8%E6%88%B7/"/>
+    <id>http://an15m.tk/2017/09/26/linux添加用户/</id>
+    <published>2017-09-26T04:51:11.000Z</published>
+    <updated>2017-09-26T04:57:07.237Z</updated>
+    
+    <content type="html"><![CDATA[<p><excerpt in="" index="" |="" 首页摘要=""><br>linux添加新用户<br><a id="more"></a></excerpt></p>
+<the rest="" of="" contents="" |="" 余下全文="">
+
+<h2 id="新建组-非必须"><a href="#新建组-非必须" class="headerlink" title="新建组(非必须)"></a>新建组(非必须)</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">groupadd --gid 2000 groupname     <span class="comment">#2000为组ID  要大于500</span></div></pre></td></tr></table></figure>
+<h2 id="新建用户"><a href="#新建用户" class="headerlink" title="新建用户"></a>新建用户</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">useradd username -g groupname -m -s /bin/bash</div></pre></td></tr></table></figure>
+<h2 id="设置密码"><a href="#设置密码" class="headerlink" title="设置密码"></a>设置密码</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">passwd username</div></pre></td></tr></table></figure>
+<h2 id="获取root权限"><a href="#获取root权限" class="headerlink" title="获取root权限"></a>获取root权限</h2><p>修改<code>/etc/sudoers</code>文件：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#找到下面两行，然后新增最后一行</span></div><div class="line"><span class="comment">## Allow root to run any commands anywhere</span></div><div class="line">root ALL=(ALL:ALL) ALL</div><div class="line">username ALL=(ALL:ALL) ALL</div></pre></td></tr></table></figure>
+<blockquote>
+<p>如果文章对你有帮助,请去我的博客留个言吧! <a href="http://an15m.tk">我的博客</a></p>
+</blockquote>
+</the>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;excerpt in=&quot;&quot; index=&quot;&quot; |=&quot;&quot; 首页摘要=&quot;&quot;&gt;&lt;br&gt;linux添加新用户&lt;br&gt;
+    
+    </summary>
+    
+      <category term="linux" scheme="http://an15m.tk/categories/linux/"/>
+    
+    
+      <category term="linux" scheme="http://an15m.tk/tags/linux/"/>
+    
+  </entry>
   
   <entry>
     <title>linux server使用U盘</title>
