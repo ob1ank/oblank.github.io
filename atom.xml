@@ -53,13 +53,13 @@
     <link href="http://an15m.tk/2017/09/26/linux-server%E4%BD%BF%E7%94%A8U%E7%9B%98/"/>
     <id>http://an15m.tk/2017/09/26/linux-server使用U盘/</id>
     <published>2017-09-26T04:45:40.000Z</published>
-    <updated>2017-09-26T04:49:36.668Z</updated>
+    <updated>2017-11-18T02:45:50.483Z</updated>
     
     <content type="html"><![CDATA[<p><excerpt in="" index="" |="" 首页摘要=""><br>linux server中挂载、卸载U盘<br><a id="more"></a></excerpt></p>
 <the rest="" of="" contents="" |="" 余下全文="">
 
 <h2 id="挂载"><a href="#挂载" class="headerlink" title="挂载"></a>挂载</h2><p>在插入U盘前先进到<code>/dev</code>目录下面<code>ls</code>一下<br>插入U盘以后再<code>ls</code>一下，查看目录下面多了什么，一般是<code>sdb sdb4 sdc sdc4...</code><br>使用<code>sudo mount /dev/sdb4  /mnt/</code>进行挂载，之后进入<code>/mnt</code>目录就是U盘的目录</p>
-<h2 id="卸载"><a href="#卸载" class="headerlink" title="卸载"></a>卸载</h2><p><code>sudo unmount /dev/sdb4</code>然后拔掉U盘即可</p>
+<h2 id="卸载"><a href="#卸载" class="headerlink" title="卸载"></a>卸载</h2><p><code>sudo umount /dev/sdb4</code>然后拔掉U盘即可</p>
 <blockquote>
 <p>如果文章对你有帮助,请去我的博客留个言吧! <a href="http://an15m.tk">我的博客</a></p>
 </blockquote>
