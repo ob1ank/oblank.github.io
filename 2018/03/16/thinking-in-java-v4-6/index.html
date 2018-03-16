@@ -7,20 +7,20 @@
   
   
   
-  <title>JAVA编程思想第四版第一章 | an15m</title>
+  <title>JAVA编程思想第四版第六章 | an15m</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="第一章 对象导论">
+  <meta name="description" content="第六章 访问权限控制">
 <meta name="keywords" content="java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JAVA编程思想第四版第一章">
-<meta property="og:url" content="http://an15m.tk/2017/09/07/thinking-in-java-v4-1/index.html">
+<meta property="og:title" content="JAVA编程思想第四版第六章">
+<meta property="og:url" content="http://an15m.tk/2018/03/16/thinking-in-java-v4-6/index.html">
 <meta property="og:site_name" content="an15m">
-<meta property="og:description" content="第一章 对象导论">
+<meta property="og:description" content="第六章 访问权限控制">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-07T10:23:22.979Z">
+<meta property="og:updated_time" content="2018-03-16T08:43:26.159Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JAVA编程思想第四版第一章">
-<meta name="twitter:description" content="第一章 对象导论">
+<meta name="twitter:title" content="JAVA编程思想第四版第六章">
+<meta name="twitter:description" content="第六章 访问权限控制">
   
   
     <link rel="icon" href="/img/k.ico">
@@ -261,11 +261,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-thinking-in-java-v4-1" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-thinking-in-java-v4-6" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2017/09/07/thinking-in-java-v4-1/" class="article-date">
-      <time datetime="2017-09-07T09:06:07.000Z" itemprop="datePublished">2017-09-07</time>
+      <a  href="/2018/03/16/thinking-in-java-v4-6/" class="article-date">
+      <time datetime="2018-03-16T08:39:45.000Z" itemprop="datePublished">2018-03-16</time>
 </a>
 
     </div>
@@ -279,7 +279,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      JAVA编程思想第四版第一章
+      JAVA编程思想第四版第六章
     </h1>
   
 
@@ -289,7 +289,7 @@
       <div class="article-info article-info-post">
         
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/java编程思想v4/">java编程思想v4</a>
+    <a class="article-category-link" href="/categories/JAVA编程思想v4/">JAVA编程思想v4</a>
     </div>
 
 
@@ -305,12 +305,34 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p><excerpt in="" index="" |="" 首页摘要=""><br>第一章 对象导论<br><a id="more"></a></excerpt></p>
+        <p><excerpt in="" index="" |="" 首页摘要=""><br>第六章 访问权限控制<br><a id="more"></a></excerpt></p>
 <the rest="" of="" contents="" |="" 余下全文="">
 
-<ol>
-<li><code>private</code>关键字：除类型创建者和类型的内部方法之外的任何人都不能访问。<br><code>protected</code>关键字：与<code>private</code>相当，差别在与继承的类可以访问<code>protected</code>成员。</li>
-</ol>
+<h3 id="第六章-访问控制权限"><a href="#第六章-访问控制权限" class="headerlink" title="第六章 访问控制权限"></a>第六章 访问控制权限</h3><h4 id="包访问权限-protected"><a href="#包访问权限-protected" class="headerlink" title="包访问权限 protected"></a>包访问权限 protected</h4><ul>
+<li><code>protected</code>与<code>private</code>类似，差别在于具有<code>protected</code>访问修饰词的成员在继承类中是可以访问的。如果在当前包中继承另一个包中的类，对具有<code>protected</code>访问修饰词的成员，也是可以访问的。</li>
+<li><code>protected</code>修饰词具有包访问权限，即同一个包内都可以访问。</li>
+<li><code>protected</code>与<code>public</code>的区别在于，非当前包中的继承类可以访问，非继承类不可访问。</li>
+<li>相同目录下所有不具有明确<code>package</code>声明的文件，都被视为是该目录下<em>默认包</em> 的一部分。</li>
+</ul>
+<h4 id="import-寻址"><a href="#import-寻址" class="headerlink" title="import 寻址"></a>import 寻址</h4><p>例如<code>import tk.an15m.util.Print</code></p>
+<ul>
+<li>JAVA首先要查找<code>CLASSPATH</code>环境变量，假如<code>CLASSPATH=.;c:\javaclass</code>，<code>.</code>代表运行命令的当前路径，因此JAVA会首先定位到当前目录，然后按照<code>./tk/an15m/util/Print.java</code>去查找，对于<code>c:\javaclass</code>也一样，JAVA会去查找<code>c:\javaclass\tk\an15m\util\Print.java</code></li>
+</ul>
+<h4 id="import-static-静态导入"><a href="#import-static-静态导入" class="headerlink" title="import static 静态导入"></a>import static 静态导入</h4><ul>
+<li><code>import static</code>是JDK1.5中的新特性。</li>
+<li>一般的导入格式为<code>import tk.an15m.util.Print</code>，这样导入的是<code>Print</code>这个类</li>
+<li>静态导入的格式为<code>import static tk.an15m.util.Print.print</code>,这样导入的是<code>Print</code>类下的static方法<code>print()</code>，这样做的好处是在使用<code>print()</code>方法的时候可以直接写<code>print()</code>而不用加类名<code>Print.print()</code></li>
+</ul>
+<h4 id="类的访问权限"><a href="#类的访问权限" class="headerlink" title="类的访问权限"></a>类的访问权限</h4><ul>
+<li>每个编译单元(文件)都只能有一个<code>public</code>类，并且文件名前缀必须与<code>public</code>类同名，包含大小写</li>
+<li>若一个编译单元内不包含<code>public</code>类，则可以随意命名</li>
+<li>类既不可以是<code>private</code>的(这样会使其他所有类都无法访问它)，也不可以是<code>protected</code>的(除非是内部类)。因此，类要么是具有包访问权限，要么是<code>public</code>的</li>
+<li><p>如果不想任何人创建一个类的对象，可以将构造器都指定为<code>private</code>，但有一个例外，可以该类的static成员内部创建该类的对象。例子：</p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Soup</span></span>&#123;</div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="title">Soup</span><span class="params">()</span></span>&#123;&#125;</div><div class="line">    <span class="comment">//creat via static method</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Soup <span class="title">makeSoup</span><span class="params">()</span></span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">new</span> Soup();</div><div class="line">    &#125;</div><div class="line">    <span class="comment">//creat a static object and return a reference upon request.</span></div><div class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Soup sp = <span class="keyword">new</span> Soup();</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Soup <span class="title">access</span><span class="params">()</span></span>&#123;</div><div class="line">        <span class="keyword">return</span> ps;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>如果一个类只具有包访问权限，但是该的的某个static成员是<code>public</code>的话，该成员仍然可以被外部访问 </p>
+</li>
+</ul>
 <blockquote>
 <p>如果文章对你有帮助,请去我的博客留个言吧! <a href="http://an15m.tk">我的博客</a></p>
 </blockquote>
@@ -322,13 +344,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a  href="/2017/09/07/thinking-in-java-v4-1/">JAVA编程思想第四版第一章</a></p>
+        <p><span>本文标题:</span><a  href="/2018/03/16/thinking-in-java-v4-6/">JAVA编程思想第四版第六章</a></p>
         <p><span>文章作者:</span><a  href="/" title="访问 an15m 的个人博客">an15m</a></p>
-        <p><span>发布时间:</span>2017年09月07日 - 17时06分</p>
-        <p><span>最后更新:</span>2017年09月07日 - 18时23分</p>
+        <p><span>发布时间:</span>2018年03月16日 - 16时39分</p>
+        <p><span>最后更新:</span>2018年03月16日 - 16时43分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2017/09/07/thinking-in-java-v4-1/" title="JAVA编程思想第四版第一章">http://an15m.tk/2017/09/07/thinking-in-java-v4-1/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://an15m.tk/2017/09/07/thinking-in-java-v4-1/　　作者: an15m" title=""></span>
+            <span>原始链接:</span><a class="post-url" href="/2018/03/16/thinking-in-java-v4-6/" title="JAVA编程思想第四版第六章">http://an15m.tk/2018/03/16/thinking-in-java-v4-6/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://an15m.tk/2018/03/16/thinking-in-java-v4-6/　　作者: an15m" title=""></span>
         </p>
         <p>
             <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
@@ -339,18 +361,9 @@
 
 <nav id="article-nav">
   
-    <a  href="/2017/09/07/thinking-in-java-v4-2/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          JAVA编程思想第四版第二章
-        
-      </div>
-    </a>
   
-  
-    <a  href="/2017/08/30/fsat-git/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">fsat git</div>
+    <a  href="/2017/09/26/linux添加用户/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">linux添加用户</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -362,7 +375,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#第六章-访问控制权限"><span class="toc-number">1.</span> <span class="toc-text">第六章 访问控制权限</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#包访问权限-protected"><span class="toc-number">1.1.</span> <span class="toc-text">包访问权限 protected</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#import-寻址"><span class="toc-number">1.2.</span> <span class="toc-text">import 寻址</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#import-static-静态导入"><span class="toc-number">1.3.</span> <span class="toc-text">import static 静态导入</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#类的访问权限"><span class="toc-number">1.4.</span> <span class="toc-text">类的访问权限</span></a></li></ol></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
@@ -432,13 +445,11 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a  href="/2017/09/07/thinking-in-java-v4-2/" title="上一篇: JAVA编程思想第四版第二章">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a  href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a  href="/2017/08/30/fsat-git/" title="下一篇: fsat git">
+            <a  href="/2017/09/26/linux添加用户/" title="下一篇: linux添加用户">
                 <i class="fa fa-angle-right"></i>
             </a>
         

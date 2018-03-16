@@ -1,2 +1,0 @@
-- 关闭：ignored_packages值添加："Vintage"
-- 打开：当然是去掉
