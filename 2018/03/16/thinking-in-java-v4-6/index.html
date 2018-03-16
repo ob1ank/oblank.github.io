@@ -17,7 +17,7 @@
 <meta property="og:site_name" content="an15m">
 <meta property="og:description" content="第六章 访问权限控制">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-16T08:45:35.353Z">
+<meta property="og:updated_time" content="2018-03-16T08:48:20.068Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JAVA编程思想第四版第六章">
 <meta name="twitter:description" content="第六章 访问权限控制">
@@ -323,16 +323,16 @@
 <li>一般的导入格式为<code>import tk.an15m.util.Print</code>，这样导入的是<code>Print</code>这个类</li>
 <li>静态导入的格式为<code>import static tk.an15m.util.Print.print</code>,这样导入的是<code>Print</code>类下的static方法<code>print()</code>，这样做的好处是在使用<code>print()</code>方法的时候可以直接写<code>print()</code>而不用加类名<code>Print.print()</code></li>
 </ul>
-<h2 id="类的访问权限"><a href="#类的访问权限" class="headerlink" title="类的访问权限"></a>类的访问权限</h2><ul>
+<h2 id="类的访问权限"><a href="#类的访问权限" class="headerlink" title="类的访问权限"></a>类的访问权限</h2><ol>
 <li>每个编译单元(文件)都只能有一个<code>public</code>类，并且文件名前缀必须与<code>public</code>类同名，包含大小写</li>
 <li>若一个编译单元内不包含<code>public</code>类，则可以随意命名</li>
 <li>类既不可以是<code>private</code>的(这样会使其他所有类都无法访问它)，也不可以是<code>protected</code>的(除非是内部类)。因此，类要么是具有包访问权限，要么是<code>public</code>的</li>
 <li><p>如果不想任何人创建一个类的对象，可以将构造器都指定为<code>private</code>，但有一个例外，可以该类的static成员内部创建该类的对象。例子：</p>
-  <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Soup</span></span>&#123;</div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="title">Soup</span><span class="params">()</span></span>&#123;&#125;</div><div class="line">    <span class="comment">//creat via static method</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Soup <span class="title">makeSoup</span><span class="params">()</span></span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">new</span> Soup();</div><div class="line">    &#125;</div><div class="line">    <span class="comment">//creat a static object and return a reference upon request.</span></div><div class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Soup sp = <span class="keyword">new</span> Soup();</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Soup <span class="title">access</span><span class="params">()</span></span>&#123;</div><div class="line">        <span class="keyword">return</span> ps;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+ <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Soup</span></span>&#123;</div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="title">Soup</span><span class="params">()</span></span>&#123;&#125;</div><div class="line">    <span class="comment">//creat via static method</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Soup <span class="title">makeSoup</span><span class="params">()</span></span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">new</span> Soup();</div><div class="line">    &#125;</div><div class="line">    <span class="comment">//creat a static object and return a reference upon request.</span></div><div class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Soup sp = <span class="keyword">new</span> Soup();</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Soup <span class="title">access</span><span class="params">()</span></span>&#123;</div><div class="line">        <span class="keyword">return</span> ps;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 <li><p>如果一个类只具有包访问权限，但是该的的某个static成员是<code>public</code>的话，该成员仍然可以被外部访问 </p>
 </li>
-</ul>
+</ol>
 <blockquote>
 <p>如果文章对你有帮助,请去我的博客留个言吧! <a href="http://an15m.tk">我的博客</a></p>
 </blockquote>
@@ -347,7 +347,7 @@
         <p><span>本文标题:</span><a  href="/2018/03/16/thinking-in-java-v4-6/">JAVA编程思想第四版第六章</a></p>
         <p><span>文章作者:</span><a  href="/" title="访问 an15m 的个人博客">an15m</a></p>
         <p><span>发布时间:</span>2018年03月16日 - 16时39分</p>
-        <p><span>最后更新:</span>2018年03月16日 - 16时45分</p>
+        <p><span>最后更新:</span>2018年03月16日 - 16时48分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2018/03/16/thinking-in-java-v4-6/" title="JAVA编程思想第四版第六章">http://an15m.tk/2018/03/16/thinking-in-java-v4-6/</a>
             <span class="copy-path" data-clipboard-text="原文: http://an15m.tk/2018/03/16/thinking-in-java-v4-6/　　作者: an15m" title=""></span>
